@@ -37,7 +37,7 @@ const CONTENT = {
     github: "https://github.com/idrissbadad-ai",
     // Chemin vers ta photo. Dépose le fichier dans le dossier assets/
     // puis remplace ce chemin, ex: "assets/photo.jpg"
-    photo: "assets/photo_CV.png",
+    photo: "assets/Photo_CV.png",
     aboutText: "En pleine formation BTS SIO, je combine rigueur académique et projets personnels en programmation. Je recherche un stage pour relever des défis concrets et apporter un regard neuf à votre stack technique. Motivé, autonome et prêt à coder !"
   },
 
