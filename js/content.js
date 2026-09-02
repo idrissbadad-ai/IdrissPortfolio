@@ -103,15 +103,15 @@ const CONTENT = {
     },
     {
       category: "Langages de programmation",
-      items: ["C#", "Python"]
+      items: ["C#", "Python", "Java"]
     },
     {
       category: "Bases de données",
-      items: ["MySQL", "SQL Server", "SQL (requêtes, manipulation de données)"]
+      items: ["MySQL", "SQL Server", "SQL (requêtes, manipulation de données)", "NoSQL", "MongoDB"]
     },
     {
       category: "Outils",
-      items: ["Rider (IDE)", "VMware", "VirtualBox"]
+      items: ["Rider (IDE)", "VMware", "VirtualBox", "Symphony", "Balsamiq"]
     },
     {
       category: "Systèmes et cybersécurité",
@@ -147,7 +147,6 @@ const CONTENT = {
       context: "Projet de BTS — Compétences ....",
       description: "J'ai développé un site web à l'aide de l'I.A afin d'y acceuilir mon portfolio.",
       stack: ["JS", "HTML", "CSS"],
-      link: "",       // lien démo ou dépôt, laisse "" si aucun
       gallery: [
         {
           image: "assets/1ere/Projets/Site_wix.png",
@@ -162,7 +161,7 @@ const CONTENT = {
           caption: "Étape 3 : Mise en place d'une feuille sombre inspirée des éditeurs de code, pour refléter mon profil de développeur."
         },
         {
-          image: "assets/1ere/Projets/.png",
+          image: "assets/1ere/Projets/Git.png",
           caption: "Étape 4 : Publication de mon site sur Github afin de le partager au grand public."
         }
       ]
@@ -172,25 +171,33 @@ const CONTENT = {
       categorie: "1ere-annee",
       context: "Projet de BTS — Compétences ....",
       description: "J'ai développement un site qui regroupe plusieurs actualités autour du cyber en Europe.",
-      stack: ["Actualité", "Site", "HTML"],
+      stack: ["Actualité", "Site", "PhpMyAdmin"],
       link: "",
       image: "assets/1ere/Projets/Dev_cybernews.png",
       gallery: [
-        { image: "", caption: "Décris ce que montre cette capture." },
-        { image: "", caption: "Décris ce que montre cette capture." }
+        { image: "assets/1ere/Projets/BDD_Cybernews.png", caption: "Etape 1 : Réalisation de la base de donnée qui va garder les données sur PhpMyAdmin ." },
+        { image: "assets/1ere/Projets/Code_gestion_news.png", caption: "Etape 2 : Code qui permet de classer chaque news dans une catégorie spécifique." },
+        { image: "assets/1ere/Projets/Code_menu.png", caption: "Etape 3 : Création du menu dans un fichier include afin de le réutiliser dans toute les pages du site." },
+        { image: "assets/1ere/Projets/Résultat_cybernews.png", caption: "Etape 4 : Résultat finale." }
+
+
       ]
     },
     {
       title: "Gestion et administration des utilisateurs",
       categorie: "1ere-annee",
       context: "Projet de BTS — Compétences ....",
-      description: "J'ai réalisé un tp sur la création d'utilisateur et la gestion des utilisateurs sur Windows.",
+      description: "J'ai réalisé un tp sur la création et la gestion des utilisateurs sur Windows de différente manière.",
       stack: ["Gestion", "User", "Windows"],
       link: "",
-      image: "assets/1ere/Projets/Gestion_user.png",
+      image: "assets/Admin.jpeg",
       gallery: [
-        { image: "", caption: "Décris ce que montre cette capture." },
-        { image: "", caption: "Décris ce que montre cette capture." }
+        { image: "assets/1ere/Projets/Creation_user.png", caption: "Invite de commande : Création d'un utilisateur via l'invite de commande windows." },
+        { image: "assets/1ere/Projets/Gestion_user.png", caption: "Invite de commande : Création d'un groupe afin d'y insérer les utilisateurs qui y correspondent." },
+        { image: "assets/1ere/Projets/Gestion_user2.png", caption: "Invite de commande : Insertion des utiliseteurs dans le groupe dédier." },
+        { image: "assets/1ere/Projets/", caption: "Interface Windows : Création d'un utilisateur via l'interface Windows." },
+        { image: "assets/1ere/Projets/", caption: "Interface Windows : Création d'un groupe afin d'y insérer les utilisateurs qui y correspondent." },
+        { image: "assets/1ere/Projets/", caption: "Interface Windows : Insertion des utiliseteurs dans le groupe dédier." },
       ]
     },
     {
@@ -487,7 +494,7 @@ const CONTENT = {
       {
         title: "Tableau de synthèse des réalisations professionnelles",
         description: "Vous trouverez mes réalisations professionnelles ci-dessous :",
-        preview: "assets/1ere/IBA_tableau_synthese_realisations_professionnelles_page.png",
+        preview: "assets/1ere/IBA_tableau_synthese_realisations_professionnelles_page.jpg",
         file: "assets/1ere/IBA_tableau_synthese_realisations_professionnelles_page.pdf"
       },
       {
