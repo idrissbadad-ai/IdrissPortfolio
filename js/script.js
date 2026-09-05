@@ -199,10 +199,16 @@ function renderProjectsHub() {
     if (!items || items.length === 0) return;
 
     const groupWrap = el("div", { class: "hub-group" });
-    groupWrap.appendChild(el("div", { class: "hub-group-title", text: cat.label }));
+
+    const titleLink = el("a", {
+      class: "hub-group-title",
+      text: cat.label,
+      attrs: { href: `#categorie-${cat.key}` }
+    });
+    groupWrap.appendChild(titleLink);
 
     const grid = el("div", { class: "hub-links-grid" });
-      items.forEach(proj => {
+    items.forEach(proj => {
       const link = el("a", { class: "hub-link", attrs: { href: `#projet-${slugify(proj.title)}` } });
       link.appendChild(el("span", { class: "hub-num", text: String(proj.index + 1).padStart(2, "0") }));
       link.appendChild(el("span", { text: proj.title }));
@@ -212,6 +218,66 @@ function renderProjectsHub() {
 
     container.appendChild(groupWrap);
   });
+}
+
+function renderProjectDetail() {
+  const container = document.querySelector("[data-project-detail]");
+  if (!container || !CONTENT.projects) return;
+
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
+  const index = CONTENT.projects.findIndex(p => slugify(p.title) === id);
+  const proj = CONTENT.projects[index];
+
+  if (!proj) {
+    container.appendChild(el("p", { text: "Réalisation introuvable." }));
+    return;
+  }
+
+  const catInfo = PROJECT_CATEGORIES.find(c => c.key === proj.categorie);
+  document.title = `${proj.title} — Portfolio BTS SIO SLAM`;
+
+  if (catInfo) container.appendChild(el("span", { class: "section-tag", text: catInfo.label }));
+  container.appendChild(el("h1", { text: proj.title }));
+
+  if (proj.competences && proj.competences.length) {
+    const compWrap = el("div", { class: "project-competences" });
+    compWrap.appendChild(el("span", { class: "project-competences-label", text: "Compétences" }));
+    proj.competences.forEach(c => compWrap.appendChild(el("span", { class: "competence-pill", text: c })));
+    container.appendChild(compWrap);
+  }
+  if (proj.context) container.appendChild(el("p", { class: "project-context", text: proj.context }));
+  if (proj.description) container.appendChild(el("p", { class: "project-detail-lead", text: proj.description }));
+
+  if (proj.stack && proj.stack.length) {
+    const stackWrap = el("div", { class: "project-stack" });
+    proj.stack.forEach(t => stackWrap.appendChild(el("span", { class: "tag", text: t })));
+    container.appendChild(stackWrap);
+  }
+
+  if (proj.image) {
+    container.appendChild(el("img", { class: "project-detail-image", attrs: { src: proj.image, alt: `Capture du projet ${proj.title}` } }));
+  }
+
+  if (proj.link || proj.repo) {
+    const links = el("div", { class: "project-links" });
+    if (proj.link) links.appendChild(el("a", { text: "Voir la démo →", attrs: { href: proj.link, target: "_blank", rel: "noopener" } }));
+    if (proj.repo) links.appendChild(el("a", { text: "Code source →", attrs: { href: proj.repo, target: "_blank", rel: "noopener" } }));
+    container.appendChild(links);
+  }
+
+  if (proj.gallery && proj.gallery.length) {
+    const galleryClass = proj.galleryStyle === "compact" ? "project-gallery project-gallery--compact" : "project-gallery";
+    const gallery = el("div", { class: galleryClass });
+    proj.gallery.forEach(item => {
+      if (!item.image) return;
+      const block = el("div", { class: "project-gallery-item" });
+      block.appendChild(el("img", { attrs: { src: item.image, alt: item.caption || proj.title } }));
+      if (item.caption) block.appendChild(el("p", { class: "project-gallery-caption", text: item.caption }));
+      gallery.appendChild(block);
+    });
+    container.appendChild(gallery);
+  }
 }
 
 function renderProjects() {
@@ -224,23 +290,30 @@ function renderProjects() {
     const items = groups[cat.key];
     if (!items || items.length === 0) return;
 
-    const group = el("div", { class: "project-group" });
-
+    const group = el("div", { class: "project-group", attrs: { id: `categorie-${cat.key}` } });
     const groupHead = el("div", { class: "section-head project-group-head" });
     groupHead.appendChild(el("h2", { text: cat.label }));
     group.appendChild(groupHead);
 
     items.forEach(proj => {
-      const card = el("div", { class: "project-card", attrs: { id: `projet-${slugify(proj.title)}` } });
+      const slug = slugify(proj.title);
+      const detailUrl = `realisation-detail.html?id=${slug}`;
+
+      const card = el("div", { class: "project-card project-card--summary", attrs: { id: `projet-${slug}` } });
 
       card.appendChild(el("span", { class: "project-num", text: `Réalisation ${String(proj.index + 1).padStart(2, "0")}` }));
 
-      if (proj.image) {
-        card.appendChild(el("img", { attrs: { src: proj.image, alt: `Capture du projet ${proj.title}` } }));
-      }
+      const titleLink = el("a", { attrs: { href: detailUrl, target: "_blank", rel: "noopener" } });      titleLink.appendChild(el("h3", { text: proj.title }));
+      card.appendChild(titleLink);
+
       if (proj.context) card.appendChild(el("div", { class: "project-context", text: proj.context }));
-      card.appendChild(el("h3", { text: proj.title }));
-      card.appendChild(el("p", { text: proj.description }));
+
+      if (proj.competences && proj.competences.length) {
+        const compWrap = el("div", { class: "project-competences" });
+        compWrap.appendChild(el("span", { class: "project-competences-label", text: "Compétences" }));
+        proj.competences.forEach(c => compWrap.appendChild(el("span", { class: "competence-pill", text: c })));
+        card.appendChild(compWrap);
+      }
 
       if (proj.stack && proj.stack.length) {
         const stackWrap = el("div", { class: "project-stack" });
@@ -248,25 +321,7 @@ function renderProjects() {
         card.appendChild(stackWrap);
       }
 
-      if (proj.link || proj.repo) {
-        const links = el("div", { class: "project-links" });
-        if (proj.link) links.appendChild(el("a", { text: "Voir la démo →", attrs: { href: proj.link, target: "_blank", rel: "noopener" } }));
-        if (proj.repo) links.appendChild(el("a", { text: "Code source →", attrs: { href: proj.repo, target: "_blank", rel: "noopener" } }));
-        card.appendChild(links);
-      }
-      
-          if (proj.gallery && proj.gallery.length) {
-            const galleryClass = proj.galleryStyle === "compact" ? "project-gallery project-gallery--compact" : "project-gallery";
-            const gallery = el("div", { class: galleryClass });
-            proj.gallery.forEach(item => {
-            const block = el("div", { class: "project-gallery-item" });
-            block.appendChild(el("img", { attrs: { src: item.image, alt: item.caption || proj.title } }));
-            if (item.caption) block.appendChild(el("p", { class: "project-gallery-caption", text: item.caption }));
-            gallery.appendChild(block);
-          });
-          card.appendChild(gallery);
-      }
-
+      card.appendChild(el("a", { class: "project-detail-link", text: "Voir le détail →", attrs: { href: detailUrl, target: "_blank", rel: "noopener" } }));
       group.appendChild(card);
     });
 
@@ -524,6 +579,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderContactInfo();
   renderProjectsHub();
   renderProjects();
+  renderProjectDetail();
   renderVeilleIntro();
   renderVeille();
   renderRectorat();

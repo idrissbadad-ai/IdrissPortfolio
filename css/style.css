@@ -710,6 +710,77 @@ section + section { border-top: 1px solid var(--line); }
   font-size: 0.85rem;
 }
 
+.project-card--summary h3 { margin: 0.2rem 0 0.15rem; }
+.project-card--summary h3 a { color: var(--ink); }
+.project-card--summary h3 a:hover { color: var(--accent); }
+
+.project-competences {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 0.6rem;
+  row-gap: 0.3rem;
+  margin: 0.5rem 0 0.9rem;
+}
+
+.project-competences-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--comment);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+
+.competence-pill {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--comment);
+  background: rgba(110, 231, 183, 0.08);
+  border: 1px solid rgba(110, 231, 183, 0.28);
+  padding: 0.3rem 0.7rem;
+  border-radius: 7px;
+}
+
+.project-detail-link {
+  display: inline-block;
+  margin-top: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+#project-detail .back-link {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--comment);
+  margin-bottom: var(--space-3);
+}
+
+#project-detail h1 {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  margin: var(--space-2) 0 0.15rem;
+}
+
+#project-detail .project-detail-lead {
+  max-width: 65ch;
+  font-size: 1.05rem;
+  margin: var(--space-2) 0 var(--space-3);
+}
+
+#project-detail .project-stack { margin-bottom: var(--space-3); }
+
+#project-detail .project-detail-image {
+  width: 100%;
+  max-height: 480px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  margin: var(--space-2) 0 var(--space-3);
+}
+
+
 .project-gallery {
   display: flex;
   flex-direction: column;
@@ -736,12 +807,13 @@ section + section { border-top: 1px solid var(--line); }
 .project-gallery--compact {
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
   gap: var(--space-3) var(--space-4);
 }
 
 .project-gallery--compact .project-gallery-item {
-  width: 100%;
-  max-width: 220px;
+  flex: 0 1 280px;
+  max-width: 280px;
   text-align: center;
 }
 
@@ -804,12 +876,17 @@ section + section { border-top: 1px solid var(--line); }
 .hub-group:last-child { margin-bottom: 0; }
 
 .hub-group-title {
+  display: block;
   font-family: var(--font-mono);
   font-size: 0.8rem;
   color: var(--ink-soft);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: var(--space-2);
+}
+.hub-group-title:hover {
+  color: var(--accent);
+  text-decoration: none;
 }
 
 .project-group-head {
@@ -822,6 +899,8 @@ section + section { border-top: 1px solid var(--line); }
   padding-top: calc(var(--space-5) / 2);
   border-top: 1px solid var(--line);
 }
+
+.project-group { scroll-margin-top: 90px; }
 
 /* ============================================================
    PARCOURS — Formations & Expériences (timeline)

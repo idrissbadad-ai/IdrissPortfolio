@@ -144,9 +144,9 @@ const CONTENT = {
     {
       title: "Développement de mon portfolio",
       categorie: "1ere-annee", // valeurs possibles : "1ere-annee", "2eme-annee", "stage-1ere-annee", "stage-2eme-annee"
-      context: "Projet de BTS — Compétences ....",
+      context: "Projet Professionnelle",
+      competences: ["Développer la présence en ligne de l'organisation : Participer à l'évolution d'un site web exploitant les données de l'organisation.", "Travailler en mode projet : Evaluer les indicateurs de suivi d'un projet et analyser les écarts", "Mettre à disposiition des utilisateurs un système informatique : Déployer un service", "Organiser son développement professionnel : Mettre en oeuvre des outils et stratégies de veille informationnelle"],
       description: "J'ai développé un site web à l'aide de l'I.A afin d'y acceuilir mon portfolio.",
-      stack: ["JS", "HTML", "CSS"],
       gallery: [
         {
           image: "assets/1ere/Projets/Site_wix.png",
@@ -169,9 +169,9 @@ const CONTENT = {
     {
       title: "Développement de mon site Cybernews",
       categorie: "1ere-annee",
-      context: "Projet de BTS — Compétences ....",
+      context: "Projet Professionnelle",
+      competences: ["Développer la présence en ligne de l'organisation : Participer à l'évolution d'un site web exploitant les données de l'organisation.", "Travailler en mode projet : Evaluer les indicateurs de suivi d'un projet et analyser les écarts", "Mettre à disposiition des utilisateurs un système informatique : Déployer un service", "Organiser son développement professionnel : Mettre en oeuvre des outils et stratégies de veille informationnelle"],
       description: "J'ai développement un site qui regroupe plusieurs actualités autour du cyber en Europe.",
-      stack: ["Actualité", "Site", "PhpMyAdmin"],
       link: "",
       image: "assets/1ere/Projets/Dev_cybernews.png",
       gallery: [
@@ -187,8 +187,8 @@ const CONTENT = {
       title: "Gestion et administration des utilisateurs",
       categorie: "1ere-annee",
       context: "Projet de BTS — Compétences ....",
+      competences: [""],
       description: "J'ai réalisé un tp sur la création et la gestion des utilisateurs sur Windows de différente manière.",
-      stack: ["Gestion", "User", "Windows"],
       link: "",
       image: "assets/Admin.jpeg",
       gallery: [
@@ -204,8 +204,8 @@ const CONTENT = {
       title: "Installation et paramétrage d'outils de développement (IDE, VS Code, GitHub...)",
       categorie: "1ere-annee",
       context: "Projet de BTS — Compétences ....",
+      competences: [""],
       description: "Décris en 2-3 phrases le besoin, ta solution, et ton rôle exact dans le projet.",
-      stack: ["Java", "JavaFX", "PostgreSQL"],
       link: "",
       image: "assets/1ere/Images-venir.png",
       gallery: [
@@ -217,8 +217,8 @@ const CONTENT = {
       title: "Certifications RGPD",
       categorie: "1ere-annee",
       context: "Projet de BTS — Compétences ....",
+      competences: [""],
       description: "J'ai réalisé les activtés RGPD ce qui m'a permis d'obtenir les certifications agréé par le RGPD.",
-      stack: ["Java", "JavaFX", "PostgreSQL"],
       link: "",
       image: "assets/Certifications/Certif_RGPD.jpg",
       galleryStyle: "compact",   
@@ -234,8 +234,8 @@ const CONTENT = {
       title: "Veille Technologique",
       categorie: "1ere-annee",
       context: "Projet de BTS — Compétences ....",
+      competences: [""],
       description: "Décris en 2-3 phrases le besoin, ta solution, et ton rôle exact dans le projet.",
-      stack: ["Java", "JavaFX", "PostgreSQL"],
       link: "",
       image: "assets/1ere/Images-venir.png",
       gallery: [
@@ -247,8 +247,8 @@ const CONTENT = {
       title: "A venir...",
       categorie: "2eme-annee",
       context: "Projet de BTS — Compétences ....",
+      competences: [""],
       description: "Décris en 2-3 phrases le besoin, ta solution, et ton rôle exact dans le projet.",
-      stack: ["Java", "JavaFX", "PostgreSQL"],
       link: "",
       image: "assets/1ere/Images-venir.png",
       gallery: [
@@ -260,8 +260,8 @@ const CONTENT = {
       title: "A faire",
       categorie: "stage-1ere-annee",
       context: "Projet de BTS — Compétences ....",
+      competences: [""],
       description: "Décris en 2-3 phrases le besoin, ta solution, et ton rôle exact dans le projet.",
-      stack: ["Java", "JavaFX", "PostgreSQL"],
       link: "",
       image: "assets/1ere/Images-venir.png",
       gallery: [
@@ -273,8 +273,8 @@ const CONTENT = {
       title: "A venir...",
       categorie: "stage-2eme-annee",
       context: "Projet de BTS — Compétences ....",
+      competences: [""],
       description: "Décris en 2-3 phrases le besoin, ta solution, et ton rôle exact dans le projet.",
-      stack: ["Java", "JavaFX", "PostgreSQL"],
       link: "",
       image: "assets/1ere/Images-venir.png",
       gallery: [
