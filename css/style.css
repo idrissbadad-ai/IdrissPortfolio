@@ -638,6 +638,13 @@ section + section { border-top: 1px solid var(--line); }
 }
 .skill-item::before { content: "- "; color: var(--line); }
 
+.skill-item--link a {
+  color: var(--accent);
+}
+.skill-item--link a:hover {
+  text-decoration: underline;
+}
+
 /* ============================================================
    PROJETS
    ============================================================ */

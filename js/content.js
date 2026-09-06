@@ -96,40 +96,42 @@ const CONTENT = {
   // ----------------------------------------------------------
   // 4. COMPÉTENCES TECHNIQUES — organisées par catégorie
   // ----------------------------------------------------------
-  skillCategories: [
-    {
-      category: "Développement web",
-      items: ["HTML", "CSS", "PHP"]
-    },
-    {
-      category: "Langages de programmation",
-      items: ["C#", "Python", "Java"]
-    },
-    {
-      category: "Bases de données",
-      items: ["MySQL", "SQL Server", "SQL (requêtes, manipulation de données)", "NoSQL", "MongoDB"]
-    },
-    {
-      category: "Outils",
-      items: ["Rider (IDE)", "VMware", "VirtualBox", "Symphony", "Balsamiq"]
-    },
-    {
-      category: "Systèmes et cybersécurité",
-      items: ["Installation, configuration et sécurisation de systèmes"]
-    },
-    {
-      category: "Administration et automatisation",
-      items: ["Gestion d'un parc informatique (inventaire, déploiement)", "Scripts MS-DOS et PowerShell"]
-    }
-  ],
-
+skillCategories: [
+  {
+    category: "Développement web",
+    items: ["HTML", "CSS", "PHP", "Symfony"]
+  },
+  {
+    category: "Langages de programmation",
+    items: ["C#", "Python", "Java", "PowerShell", "MS-DOS / Batch"]
+  },
+  {
+    category: "Bases de données",
+    items: ["MySQL","SQL Server","SQL (requêtes, manipulation de données)","NoSQL","MongoDB"]
+  },
+  {
+    category: "Systèmes, virtualisation et infrastructure",
+    items: ["Installation, configuration et sécurisation de systèmes","VMware","VirtualBox","Gestion d'un parc informatique (inventaire, déploiement)"]
+  },
+  {
+    category: "Certifications",
+    items: [
+      { name: "RGPD", link: "realisation-detail.html?id=certifications-rgpd" },
+      { name: "PIX", link: "realisation-detail.html?id=certifications-pix" }
+    ]
+  },
+  {
+    category: "Outils et conception",
+    items: ["Rider (IDE)","Balsamiq"]
+  }
+],
   // ----------------------------------------------------------
   // 5. VIE ASSOCIATIVE
   // ----------------------------------------------------------
   vieAssociative: {
     organisation: "AFEV — Association de la Fondation Étudiante pour la Ville (Rouen)",
     role: "Tuteur bénévole",
-    periode: "Depuis octobre 2025",
+    periode: "Octobre 2025 - Juillet 2026",
     missions: [
       "Accompagnement individuel de jeunes afin de lutter contre l'isolement social.",
       "Mise en place d'activités visant à renforcer la confiance en soi et l'autonomie.",
@@ -216,7 +218,7 @@ const CONTENT = {
     {
       title: "Certifications RGPD",
       categorie: "1ere-annee",
-      context: "Projet de BTS — Compétences ....",
+      context: "Projet Professionnelle",
       competences: [""],
       description: "J'ai réalisé les activtés RGPD ce qui m'a permis d'obtenir les certifications agréé par le RGPD.",
       link: "",
@@ -228,6 +230,21 @@ const CONTENT = {
         { image: "assets/Certifications/Certificat_2.jpg", caption: "Certification module 3" },
         { image: "assets/Certifications/Certificat_3.jpg", caption: "Certification module 4" },
         { image: "assets/Certifications/Certificat_4.jpg", caption: "Certification module 5" }
+      ]
+    },
+    {
+      title: "Certifications PIX",
+      categorie: "1ere-annee",
+      context: "Projet Professionnelle",
+      competences: [""],
+      description: "J'ai passé les epreuves PIX",
+      link: "",
+      image: "assets/PIX.png",
+      galleryStyle: "compact",   
+      gallery: [
+        { image: "assets/Images-venir.png", caption: "Certification BTS" }, 
+        { image: "assets/Certifications/Certif2_PIX.png", caption: "Certification Collège" },
+        { image: "assets/Certifications/Certif1_PIX.png", caption: "Certification Lycée" },
       ]
     },
     {
@@ -351,27 +368,20 @@ const CONTENT = {
         url: ""
       }
     ],
+
+      // Comment tu as concrètement mis en pratique ce que tu as appris en veille
+    miseEnOeuvre: {
+      intro: "Voici comment j'ai concrètement appliqué mes recherches sur le NoSQL dans un projet.",
+      points: [
+        {
+          title: "A FAIRE OU CHANGER : Test avec MongoDB",
+          description: "Installation d'une base MongoDB en local, création d'une collection de test pour comparer la structuration des données avec une base relationnelle classique."
+        }
+      ]
+    }
   },
 
     veille: [
-          {
-      //Fevrier
-      date: "2026-02-02",
-      title: "Des bases MongoDB exposées sur Internet",
-      source: "techradarpro",
-      url: "https://www.techradar.com/pro/security/mongodb-instances-are-being-hit-in-data-extortion-attacks-so-make-sure-youre-protected?utm_source=chatgpt.com",
-      tags: ["Securité et Performance"],
-      summary: "Des chercheurs ont découvert un grand nombre de bases MongoDB accessibles depuis Internet à cause de mauvaises configurations. Certaines bases pouvaient être consultées sans authentification. Cette actualité montre qu'une base NoSQL doit être correctement sécurisée et configurée pour éviter les fuites de données."    
-    },
-    {
-      date: "2026-02-14",
-      title: "Firestore ajoute plus de 100 fonctionnalités de requêtes",
-      source: "InfoQ",
-      url: "https://www.infoq.com/news/2026/02/firestore-enterprise-pipeline/?topicPageSponsorship=8f193681-1bdc-4ec4-a99d-7c560124ba35&_gl=1*5ew0xt*_up*MQ..*_ga*MTAyNjE1NDMzNS4xNzg4MTE0MTU4*_ga_VMVPD4D2JY*czE3ODgxMTQxNTckbzEkZzAkdDE3ODgxMTQxNTckajYwJGwwJGgw",
-      tags: ["Evolutions et Innovations"],
-      summary: "Firestore a ajouté plus de 100 nouvelles possibilités pour faciliter la recherche et la gestion des données. Ces améliorations permettent aux développeurs de travailler plus facilement avec leurs données. Firestore étant une base de données NoSQL, cette évolution montre que les bases NoSQL continuent de s'améliorer pour répondre aux besoins des applications modernes."
-    },
-
     //Mars
     {
       date: "2026-03-26",

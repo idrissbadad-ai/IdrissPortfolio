@@ -69,7 +69,14 @@ function renderSkills() {
 
     const list = el("ul", { class: "skill-list" });
     cat.items.forEach(item => {
-      list.appendChild(el("li", { class: "skill-item", text: item }));
+      if (typeof item === "object" && item.link) {
+        const li = el("li", { class: "skill-item skill-item--link" });
+        li.appendChild(el("a", { text: item.name, attrs: { href: item.link, target: "_blank", rel: "noopener" } }));
+        list.appendChild(li);
+      } else {
+        const name = typeof item === "object" ? item.name : item;
+        list.appendChild(el("li", { class: "skill-item", text: name }));
+      }
     });
     catBlock.appendChild(list);
 
@@ -399,6 +406,19 @@ function renderVeilleIntro() {
         card.appendChild(el("a", { class: "card-link", text: "Voir la source →", attrs: { href: o.url, target: "_blank", rel: "noopener" } }));
       }
       outilsContainer.appendChild(card);
+    });
+  }
+
+  const meoIntro = document.querySelector("[data-veille-mise-en-oeuvre-intro]");
+  if (meoIntro && vi.miseEnOeuvre) meoIntro.textContent = vi.miseEnOeuvre.intro;
+
+  const meoContainer = document.querySelector("[data-veille-mise-en-oeuvre]");
+  if (meoContainer && vi.miseEnOeuvre && vi.miseEnOeuvre.points) {
+    vi.miseEnOeuvre.points.forEach(p => {
+      const card = el("div", { class: "content-card" });
+      card.appendChild(el("h3", { text: p.title }));
+      card.appendChild(el("p", { text: p.description }));
+      meoContainer.appendChild(card);
     });
   }
 }
