@@ -279,7 +279,10 @@ function renderProjectDetail() {
     proj.gallery.forEach(item => {
       if (!item.image) return;
       const block = el("div", { class: "project-gallery-item" });
-      block.appendChild(el("img", { attrs: { src: item.image, alt: item.caption || proj.title } }));
+      const img = el("img", { attrs: { src: item.image, alt: item.caption || proj.title } });
+      img.style.cursor = "zoom-in";
+      img.addEventListener("click", () => openLightbox(item.image, item.caption || proj.title));
+      block.appendChild(img);
       if (item.caption) block.appendChild(el("p", { class: "project-gallery-caption", text: item.caption }));
       gallery.appendChild(block);
     });
@@ -604,6 +607,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderVeille();
   renderRectorat();
   initNavToggle();
+  initScrollTopButton();
   initFooterYear();
   initScrollReveal();
 });

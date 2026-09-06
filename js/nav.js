@@ -60,3 +60,23 @@ function initNavToggle() {
     link.addEventListener("click", () => nav.classList.remove("open"));
   });
 }
+
+function initScrollTopButton() {
+  const btn = document.createElement("button");
+  btn.className = "scroll-top-btn";
+  btn.setAttribute("aria-label", "Remonter en haut de la page");
+  btn.innerHTML = "↑";
+  document.body.appendChild(btn);
+
+  btn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+      btn.classList.add("visible");
+    } else {
+      btn.classList.remove("visible");
+    }
+  });
+}

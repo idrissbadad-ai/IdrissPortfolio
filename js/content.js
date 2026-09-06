@@ -16,8 +16,8 @@
 // L'ordre ici définit l'ordre d'affichage sur le site.
 const PROJECT_CATEGORIES = [
   { key: "1ere-annee", label: "1ère année" },
-  { key: "2eme-annee", label: "2ème année" },
   { key: "stage-1ere-annee", label: "Stage — 1ère année" },
+  { key: "2eme-annee", label: "2ème année" },
   { key: "stage-2eme-annee", label: "Stage — 2ème année" }
 ];
 
