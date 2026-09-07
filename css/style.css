@@ -121,7 +121,7 @@ button:focus-visible,
 .nav .wrap {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   height: 64px;
 }
 
@@ -172,6 +172,67 @@ button:focus-visible,
   background: var(--accent-soft);
 }
 .nav-links a.active::after { transform: scaleX(1); }
+
+.nav-dropdown { position: relative; list-style: none; display: flex; }
+
+.nav-dropdown-trigger {
+  font-family: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  color: var(--ink-soft);
+  font-size: 0.86rem;
+  font-weight: 600;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.nav-dropdown-trigger:hover { color: var(--accent); }
+.nav-dropdown-trigger.active { color: var(--accent); background: var(--accent-soft); }
+
+.nav-dropdown-arrow {
+  font-size: 0.7rem;
+  transition: transform 0.15s ease;
+}
+.nav-dropdown.open .nav-dropdown-arrow { transform: rotate(180deg); }
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 140px;
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: var(--shadow-sm);
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  z-index: 60;
+}
+
+.nav-dropdown.open .nav-dropdown-menu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.nav-dropdown-menu a {
+  padding: 0.5rem 0.7rem;
+  border-radius: 6px;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+.nav-dropdown-menu a:hover { background: var(--accent-soft); color: var(--accent); }
+.nav-dropdown-menu a.active { color: var(--accent); font-weight: 600; }
 
 .nav-toggle {
   display: none;
@@ -1174,6 +1235,18 @@ code, pre, kbd {
     padding: var(--space-2) var(--space-3);
     border-bottom: 1px solid var(--line);
   }
+    .nav-dropdown-menu {
+    position: static;
+    box-shadow: none;
+    border: none;
+    background: none;
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+    display: none;
+    padding-left: 1rem;
+  }
+  .nav-dropdown.open .nav-dropdown-menu { display: flex; }
   .about-grid { grid-template-columns: 1fr; }
   .about-photo, .about-photo-placeholder { width: 100px; height: 100px; }
   .veille-item { grid-template-columns: 1fr; gap: 0.3rem; }
