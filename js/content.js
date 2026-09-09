@@ -171,7 +171,7 @@ skillCategories: [
     {
       title: "Développement de mon site Cybernews",
       categorie: "1ere-annee",
-      context: "Projet Professionnelle",
+      context: "Projet de BTS",
       competences: ["Développer la présence en ligne de l'organisation : Participer à l'évolution d'un site web exploitant les données de l'organisation.", "Travailler en mode projet : Evaluer les indicateurs de suivi d'un projet et analyser les écarts", "Mettre à disposiition des utilisateurs un système informatique : Déployer un service", "Organiser son développement professionnel : Mettre en oeuvre des outils et stratégies de veille informationnelle"],
       description: "J'ai développement un site qui regroupe plusieurs actualités autour du cyber en Europe.",
       link: "",
@@ -188,8 +188,8 @@ skillCategories: [
     {
       title: "Gestion et administration des utilisateurs",
       categorie: "1ere-annee",
-      context: "Projet de BTS — Compétences ....",
-      competences: [""],
+      context: "Projet de BTS",
+      competences: ["Gérer le patrimoine informatique : Mettre en place et vérifier les niveaux d'habilitation associés à un service ", "Répondre aux incidents et aux demandes d’assistance et d’évolution : Traiter des demandes concernant les services réseau et système, applicatifs ", "Organiser son développement professionnel : Mettre en place son environnement d’apprentissage personnel"],
       description: "J'ai réalisé un tp sur la création et la gestion des utilisateurs sur Windows de différente manière.",
       link: "",
       image: "assets/Admin.jpeg",
@@ -205,8 +205,8 @@ skillCategories: [
     {
       title: "Installation et paramétrage d'outils de développement (IDE, VS Code, GitHub...)",
       categorie: "1ere-annee",
-      context: "Projet de BTS — Compétences ....",
-      competences: [""],
+      context: "Projet de BTS",
+      competences: ["Gérer le patrimoine informatique : Recenser et identifier les ressources numériques", "Mettre à disposition des utilisateurs un service informatique : Réaliser les tests d'intégration et d'acceptation d'un service", "Organiser son développement professionnel : Mettre en place son environnement d’apprentissage personnel"],
       description: "Décris en 2-3 phrases le besoin, ta solution, et ton rôle exact dans le projet.",
       link: "",
       image: "assets/1ere/Images-venir.png",
@@ -219,7 +219,7 @@ skillCategories: [
       title: "Certifications RGPD",
       categorie: "1ere-annee",
       context: "Projet Professionnelle",
-      competences: [""],
+      competences: ["Gérer le patrimoine informatique : Vérifier le respect des règles d’utilisation des ressources numériques", "Organiser son développement professionnel : Mettre en place son environnement d’apprentissage personnel, Gérer son identité professionnelle"],
       description: "J'ai réalisé les activtés RGPD ce qui m'a permis d'obtenir les certifications agréé par le RGPD.",
       link: "",
       image: "assets/Certifications/Certif_RGPD.jpg",
@@ -236,7 +236,7 @@ skillCategories: [
       title: "Certifications PIX",
       categorie: "1ere-annee",
       context: "Projet Professionnelle",
-      competences: [""],
+      competences: ["Gérer le patrimoine informatique : Vérifier le respect des règles d’utilisation des ressources numériques", "Organiser son développement professionnel : Mettre en place son environnement d’apprentissage personnel, Gérer son identité professionnelle"],
       description: "J'ai passé les epreuves PIX",
       link: "",
       image: "assets/PIX.png",
@@ -250,8 +250,21 @@ skillCategories: [
     {
       title: "Veille Technologique",
       categorie: "1ere-annee",
-      context: "Projet de BTS — Compétences ....",
-      competences: [""],
+      context: "Projet de BTS",
+      competences: ["Gérer le patrimoine informatique : Recenser et identifier les ressources numériques", "Répondre aux incidents et aux demandes d’assistance et d’évolution : Mettre en œuvre des outils et stratégies de veille informationnelle"],
+      description: "Décris en 2-3 phrases le besoin, ta solution, et ton rôle exact dans le projet.",
+      link: "",
+      image: "assets/1ere/Images-venir.png",
+      gallery: [
+        { image: "", caption: "Décris ce que montre cette capture." },
+        { image: "", caption: "Décris ce que montre cette capture." }
+      ]
+    },
+    {
+      title: "Rapport de stage présentant les missions réalisées, les compétences mobilisées et les outils utilisés. ",
+      categorie: "1ere-annee",
+      context: "Projet de BTS",
+      competences: ["Gérer le patrimoine informatique : Recenser et identifier les ressources numériques", "Travailler en mode projet : Planifier les activités","Organiser son développement professionnel : Développer son projet professionnel"],
       description: "Décris en 2-3 phrases le besoin, ta solution, et ton rôle exact dans le projet.",
       link: "",
       image: "assets/1ere/Images-venir.png",
@@ -274,10 +287,23 @@ skillCategories: [
       ]
     },
     {
-      title: "A faire",
+      title: "Prise en main et montée en compétences sur le framework Svelte",
       categorie: "stage-1ere-annee",
-      context: "Projet de BTS — Compétences ....",
-      competences: [""],
+      context: "Projet Professionnelle",
+      competences: ["Répondre aux incidents et aux demandes d’assistance et d’évolution : Collecter, suivre et orienter des demandes", "Organiser son développement professionnel : Développer son projet professionnel"],
+      description: "Décris en 2-3 phrases le besoin, ta solution, et ton rôle exact dans le projet.",
+      link: "",
+      image: "assets/1ere/Images-venir.png",
+      gallery: [
+        { image: "", caption: "Décris ce que montre cette capture." },
+        { image: "", caption: "Décris ce que montre cette capture." }
+      ]
+    },
+    {
+      title: "Conception et réalisation de maquettes d’interface utilisateur",
+      categorie: "stage-1ere-annee",
+      context: "Projet Professionnelle",
+      competences: ["Répondre aux incidents et aux demandes d’assistance et d’évolution : Collecter, suivre et orienter des demandes", "Travailler en mode projet : Évaluer les indicateurs de suivi d’un projet et analyser les écarts", "Organiser son développement professionnel : Développer son projet professionnel"],
       description: "Décris en 2-3 phrases le besoin, ta solution, et ton rôle exact dans le projet.",
       link: "",
       image: "assets/1ere/Images-venir.png",
@@ -504,7 +530,7 @@ skillCategories: [
       {
         title: "Tableau de synthèse des réalisations professionnelles",
         description: "Vous trouverez mes réalisations professionnelles ci-dessous :",
-        preview: "assets/1ere/IBA_tableau_synthese_realisations_professionnelles_page.jpg",
+        preview: "assets/1ere/IBA_tableau_synthese_realisations_professionnelles_page.png",
         file: "assets/1ere/IBA_tableau_synthese_realisations_professionnelles_page.pdf"
       },
       {
