@@ -426,6 +426,18 @@ function renderVeilleIntro() {
   }
 }
 
+function renderInfosPersonnelles() {
+  const container = document.querySelector("[data-infos-perso]");
+  if (!container || !CONTENT.infosPersonnelles) return;
+
+  CONTENT.infosPersonnelles.forEach(info => {
+    const item = el("div", { class: "info-item" });
+    item.appendChild(el("span", { class: "info-label", text: info.label }));
+    item.appendChild(el("span", { class: "info-value", text: info.value }));
+    container.appendChild(item);
+  });
+}
+
 function renderRectorat() {
   const r = CONTENT.rectorat;
   if (!r) return;
@@ -460,6 +472,24 @@ function renderRectorat() {
       } else {
         docsContainer.appendChild(buildDocRow(doc));
       }
+    });
+  }
+}
+
+function renderVeilleApercu() {
+  const vi = CONTENT.veilleIntro;
+  if (!vi) return;
+
+  const themeEl = document.querySelector("[data-veille-apercu-theme]");
+  if (themeEl && vi.theme) themeEl.textContent = vi.theme;
+
+  const bornagesContainer = document.querySelector("[data-veille-apercu-bornages]");
+  if (bornagesContainer && vi.bornages) {
+    vi.bornages.forEach(b => {
+      const card = el("div", { class: "content-card" });
+      card.appendChild(el("h3", { text: b.title }));
+      card.appendChild(el("p", { text: b.description }));
+      bornagesContainer.appendChild(card);
     });
   }
 }
@@ -595,6 +625,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderNav();
   renderFooter();
   renderProfile();
+  renderInfosPersonnelles();
   renderFormations();
   renderExperiences();
   renderSkills();
@@ -606,6 +637,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderVeilleIntro();
   renderVeille();
   renderRectorat();
+  renderVeilleApercu();
   initNavToggle();
   initScrollTopButton();
   initFooterYear();

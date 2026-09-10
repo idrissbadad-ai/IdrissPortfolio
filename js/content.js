@@ -40,6 +40,12 @@ const CONTENT = {
     photo: "assets/Photo_CV.png",
     aboutText: "En pleine formation BTS SIO, je combine rigueur académique et projets personnels en programmation. Je recherche un stage pour relever des défis concrets et apporter un regard neuf à votre stack technique. Motivé, autonome et prêt à coder !"
   },
+    infosPersonnelles: [
+    { label: "Date de naissance", value: "24 avril 2007" },
+    { label: "Ville", value: "Franqueville-Saint-Pierre" },
+    { label: "Nationalité", value: "Française" },
+    { label: "Permis", value: "En cours" }
+  ],
 
   // ----------------------------------------------------------
   // 2. FORMATIONS — de la plus récente à la plus ancienne
@@ -335,6 +341,8 @@ skillCategories: [
   // VEILLE — présentation du sujet, avant la liste des news
   // ----------------------------------------------------------
   veilleIntro: {
+    theme: "Thème suivi : le NoSQL — bases de données non relationnelles (MongoDB, Redis, Cassandra...).",
+
     presentation: "Le NoSQL (\"Not Only SQL\") regroupe des bases de données qui s'éloignent du modèle relationnel classique (tables, jointures) au profit de structures plus flexibles : documents JSON (MongoDB), clé-valeur (Redis), colonnes (Cassandra) ou graphes (Neo4j). Ces bases sont nées pour répondre aux besoins de scalabilité et de flexibilité des applications web modernes à fort volume de données.",
 
     pourquoi: "J'ai choisi de suivre ce sujet car je maîtrise déjà les bases de données relationnelles (MySQL, SQL Server) dans ma formation, et je voulais comprendre un paradigme différent, de plus en plus utilisé dans les architectures web actuelles (API REST, applications temps réel). C'est aussi une compétence recherchée en entreprise, où SQL et NoSQL sont souvent utilisés en complément l'un de l'autre.",

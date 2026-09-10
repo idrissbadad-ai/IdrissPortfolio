@@ -565,6 +565,10 @@ h1[data-full-name]::after {
   justify-content: center;
 }
 .lightbox-close:hover { background: var(--amber); }
+
+#infos-perso .info-grid {
+  margin: var(--space-3) 0;
+}
 /* ============================================================
    SECTIONS GÉNÉRIQUES
    ============================================================ */
