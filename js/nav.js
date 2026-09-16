@@ -6,6 +6,7 @@
 
 const NAV_LINKS = [
   { href: "index.html", label: "Mon profil", page: "profil" },
+  { href: "stage.html", label: "Stage", page: "stage" },
   { href: "realisations.html", label: "Réalisations professionnelles", page: "realisations" },
   { href: "veille.html", label: "Veille technologique", page: "veille" },
   {

@@ -47,6 +47,91 @@ const CONTENT = {
     { label: "Permis", value: "En cours" }
   ],
 
+    stages: {
+    "1ere-annee": {
+      label: "1ère année",
+      lieu: "Hôtel du Département de la Seine-Maritime — Rouen",
+      periode: "Du 25 mai au 26 juin 2026",
+      presentationGenerale: "Projet : la création d'une application de gestion de tablette. Avant cela, la gestion du matériel prêté par le département était faite avec des documents papier, ce qui rendait sa gestion compliquée. La solution et le but de mon stage étaient donc les suivants : réaliser une application qui permet de gérer la préparation des tablettes prêtées pour les collégiens à la rentrée 2026.",
+      sections: [
+        {
+          title: "Problème ?",
+          intro: "La seine maritime gere la gestion des pret commes les tablettes et PC à l'aide document papier ce qui rend compliqué sa gestion."
+        },
+        {
+          title: "Solution",
+          intro: "Informatisation de cette gestion pour faciliter et mieu comprendre."
+        },
+        {
+          title: "Contexte",
+          intro: "Je dois donc réaliser dans mon cas, une application de gestion de tablette afin d'aider des prestaires a preparer les tablettes des 15 000 collegiens du departement afin de les distribués pour la rentrée 2026.",
+          items: [
+            {
+              image: "assets/1ere/Stage/preuve_reunion.png", // ex: "assets/1ere/Stage/contexte-1.png"
+              caption: "Lors de la 1ère semaine reunion avec les prestataires afin de connaitre leur attente et besoins, voici une preuves de mes prises de notes :",
+              competences: ["Répondre aux incidents et aux demandes", "Organiser son développement professionnel"]
+            },
+            {
+              image: "", // ex: "assets/1ere/Stage/contexte-1.png"
+              caption: "Décris ce que montre cette image.",
+              competences: ["Répondre aux incidents et aux demandes", "Organiser son développement professionnel"]
+            },
+          ]
+        },
+        {
+          title: "Environnement technologique",
+          intro: "Décris ici les outils, langages et technologies utilisés dans l'entreprise durant ce stage.",
+          items: [
+            {
+              image: "", // ex: "assets/1ere/Stage/env-1.png"
+              caption: "Décris ce que montre cette image.",
+              competences: ["Conception et mise en place d'une base de données NoSQL"]
+            }
+          ]
+        },
+        {
+          title: "Conception",
+          intro: "Conception d'un projet en SvelteKit.",
+          items: [
+            {
+              image: "", // ex: "assets/1ere/Stage/env-1.png"
+              caption: "Décris ce que montre cette image.",
+              competences: ["Conception et mise en place d'une base de données NoSQL"]
+            }
+          ]
+        },
+        {
+          title: "Résultat final",
+          intro: "Voici le résulat final :",
+          items: [
+            {
+              image: "", // ex: "assets/1ere/Stage/env-1.png"
+              caption: "Décris ce que montre cette image.",
+              competences: ["Conception et mise en place d'une base de données NoSQL"]
+            }
+          ]
+        },
+      ]
+    },
+    "2eme-annee": {
+      label: "2ème année",
+      lieu: "À venir",
+      periode: "À venir",
+      sections: [
+        {
+          title: "Contexte",
+          intro: "Sera complété lors du stage de 2ème année.",
+          items: []
+        },
+        {
+          title: "Environnement technologique",
+          intro: "Sera complété lors du stage de 2ème année.",
+          items: []
+        }
+      ]
+    }
+  },
+
   // ----------------------------------------------------------
   // 2. FORMATIONS — de la plus récente à la plus ancienne
   // ----------------------------------------------------------
@@ -154,23 +239,23 @@ skillCategories: [
       categorie: "1ere-annee", // valeurs possibles : "1ere-annee", "2eme-annee", "stage-1ere-annee", "stage-2eme-annee"
       context: "Projet Professionnelle",
       competences: ["Développer la présence en ligne de l'organisation : Participer à l'évolution d'un site web exploitant les données de l'organisation.", "Travailler en mode projet : Evaluer les indicateurs de suivi d'un projet et analyser les écarts", "Mettre à disposiition des utilisateurs un système informatique : Déployer un service", "Organiser son développement professionnel : Mettre en oeuvre des outils et stratégies de veille informationnelle"],
-      description: "J'ai développé un site web à l'aide de l'I.A afin d'y acceuilir mon portfolio.",
+      description: "J’ai conçu et développé un site web afin d’y présenter mon portfolio et mes différentes réalisations.",
       gallery: [
         {
-          image: "assets/1ere/Projets/Site_wix.png",
-          caption: "Étape 1 : 1ère version de mon site sur WIX qui m'a servie de squellette pour mon 'vrai' site. "
+          image: "assets/1ere/Projets/1/Site_wix.png",
+          caption: "1- J'avais essayer de concevoir mon site sur WIX mais la limite technique des modules de base m'ont rendus difficile la tache donc j'ai basculer sur ia pour avoir une liberte de creation."
         },
         {
-          image: "assets/1ere/Projets/Dev_portfolio_projet.png",
-          caption: "Étape 2 : Séparation claire entre le contenu (un seul fichier content.js centralisant toutes mes données) et le design (HTML/CSS), permettant de mettre à jour le site en modifiant uniquement mes informations, sans toucher au code."
+          image: "assets/1ere/Projets/1/Dev_portfolio_projet.png",
+          caption: "2- Ce portfolio se concentre sur mon profil, il est comme une sorte de fentre pour me decourvir."
         },
         {
-          image: "assets/1ere/Projets/Feuille_style.png",
-          caption: "Étape 3 : Mise en place d'une feuille sombre inspirée des éditeurs de code, pour refléter mon profil de développeur."
+          image: "assets/1ere/Projets/1/Veille.png",
+          caption: "3- Dans ce portfolio on peut donc retrouver une pafrtie destine a ma veille sur le NoSQL."
         },
         {
-          image: "assets/1ere/Projets/Git.png",
-          caption: "Étape 4 : Publication de mon site sur Github afin de le partager au grand public."
+          image: "assets/1ere/Projets/1/Git.png",
+          caption: "4- Afin de rendre mon site accesible pour tous j'ai du deployer ce dernier sur github sous forme de projet."
         }
       ]
     },
@@ -181,7 +266,7 @@ skillCategories: [
       competences: ["Développer la présence en ligne de l'organisation : Participer à l'évolution d'un site web exploitant les données de l'organisation.", "Travailler en mode projet : Evaluer les indicateurs de suivi d'un projet et analyser les écarts", "Mettre à disposiition des utilisateurs un système informatique : Déployer un service", "Organiser son développement professionnel : Mettre en oeuvre des outils et stratégies de veille informationnelle"],
       description: "J'ai développement un site qui regroupe plusieurs actualités autour du cyber en Europe.",
       link: "",
-      image: "assets/1ere/Projets/Dev_cybernews.png",
+      image: "",
       gallery: [
         { image: "assets/1ere/Projets/BDD_Cybernews.png", caption: "Etape 1 : Réalisation de la base de donnée qui va garder les données sur PhpMyAdmin ." },
         { image: "assets/1ere/Projets/Code_gestion_news.png", caption: "Etape 2 : Code qui permet de classer chaque news dans une catégorie spécifique." },
@@ -296,7 +381,7 @@ skillCategories: [
       title: "Prise en main et montée en compétences sur le framework Svelte",
       categorie: "stage-1ere-annee",
       context: "Projet Professionnelle",
-      competences: ["Répondre aux incidents et aux demandes d’assistance et d’évolution : Collecter, suivre et orienter des demandes", "Organiser son développement professionnel : Développer son projet professionnel"],
+      competences: ["Répondre aux incidents et aux demandes d’assistance et d’évolution : Traiter des demandes concernant les applications", "Organiser son développement professionnel : Développer son projet professionnel"],
       description: "Décris en 2-3 phrases le besoin, ta solution, et ton rôle exact dans le projet.",
       link: "",
       image: "assets/1ere/Images-venir.png",
@@ -309,7 +394,59 @@ skillCategories: [
       title: "Conception et réalisation de maquettes d’interface utilisateur",
       categorie: "stage-1ere-annee",
       context: "Projet Professionnelle",
-      competences: ["Répondre aux incidents et aux demandes d’assistance et d’évolution : Collecter, suivre et orienter des demandes", "Travailler en mode projet : Évaluer les indicateurs de suivi d’un projet et analyser les écarts", "Organiser son développement professionnel : Développer son projet professionnel"],
+      competences: ["Répondre aux incidents et aux demandes d’assistance et d’évolution : Traiter des demandes concernant les applications", "Travailler en mode projet : Évaluer les indicateurs de suivi d’un projet et analyser les écarts"],
+      description: "Décris en 2-3 phrases le besoin, ta solution, et ton rôle exact dans le projet.",
+      link: "",
+      image: "assets/1ere/Images-venir.png",
+      gallery: [
+        { image: "", caption: "Décris ce que montre cette capture." },
+        { image: "", caption: "Décris ce que montre cette capture." }
+      ]
+    },
+    {
+      title: "Réalisation d’un modèle conceptuel de données (CDM)",
+      categorie: "stage-1ere-annee",
+      context: "Projet Professionnelle",
+      competences: ["Répondre aux incidents et aux demandes d’assistance et d’évolution : Traiter des demandes concernant les applications","Gérer le patrimoine informatique : Exploiter des référentiels, normes et standards adoptés par le prestataire informatique", "Collecter, suivre et orienter des demandes : Répondre aux incidents et aux demandes d’assistance et d’évolution"],
+      description: "Décris en 2-3 phrases le besoin, ta solution, et ton rôle exact dans le projet.",
+      link: "",
+      image: "assets/1ere/Images-venir.png",
+      gallery: [
+        { image: "", caption: "Décris ce que montre cette capture." },
+        { image: "", caption: "Décris ce que montre cette capture." }
+      ]
+    },
+    {
+      title: "Conception et mise en place d’une base de données NoSQL ",
+      categorie: "stage-1ere-annee",
+      context: "Projet Professionnelle",
+      competences: ["Répondre aux incidents et aux demandes d’assistance et d’évolution : Traiter des demandes concernant les applications","Mettre à disposition des utilisateurs un service informatique : Réaliser les tests d’intégration et d’acceptation d’un service","Organiser son développement professionnel : Développer son projet professionnel"],
+      description: "Décris en 2-3 phrases le besoin, ta solution, et ton rôle exact dans le projet.",
+      link: "",
+      image: "assets/1ere/Images-venir.png",
+      gallery: [
+        { image: "", caption: "Décris ce que montre cette capture." },
+        { image: "", caption: "Décris ce que montre cette capture." }
+      ]
+    },
+    {
+      title: "Développement d’une application de gestion de tablette web avec le framework Svelte",
+      categorie: "stage-1ere-annee",
+      context: "Projet Professionnelle",
+      competences: ["Répondre aux incidents et aux demandes d’assistance et d’évolution : Traiter des demandes concernant les applications, Suivre et orienter des demandes ","Travailler en mode projet : Planifier les activités, Évaluer les indicateurs de suivi d’un projet et analyser les écarts","Organiser son développement professionnel : Développer son projet professionnel"],
+      description: "Décris en 2-3 phrases le besoin, ta solution, et ton rôle exact dans le projet.",
+      link: "",
+      image: "assets/1ere/Images-venir.png",
+      gallery: [
+        { image: "", caption: "Décris ce que montre cette capture." },
+        { image: "", caption: "Décris ce que montre cette capture." }
+      ]
+    },
+    {
+      title: "Mise en ligne et gestion du projet via GitHub ",
+      categorie: "stage-1ere-annee",
+      context: "Projet Professionnelle",
+      competences: ["Répondre aux incidents et aux demandes d’assistance et d’évolution : Collecter, suivre et orienter des demandes ","Mettre à disposition des utilisateurs un service informatique : Déployer un service"],
       description: "Décris en 2-3 phrases le besoin, ta solution, et ton rôle exact dans le projet.",
       link: "",
       image: "assets/1ere/Images-venir.png",
@@ -341,7 +478,7 @@ skillCategories: [
   // VEILLE — présentation du sujet, avant la liste des news
   // ----------------------------------------------------------
   veilleIntro: {
-    theme: "Thème suivi : le NoSQL — bases de données non relationnelles (MongoDB, Redis, Cassandra...).",
+    theme: "Thème suivi : le NoSQL — bases de données non relationnelles.",
 
     presentation: "Le NoSQL (\"Not Only SQL\") regroupe des bases de données qui s'éloignent du modèle relationnel classique (tables, jointures) au profit de structures plus flexibles : documents JSON (MongoDB), clé-valeur (Redis), colonnes (Cassandra) ou graphes (Neo4j). Ces bases sont nées pour répondre aux besoins de scalabilité et de flexibilité des applications web modernes à fort volume de données.",
 
@@ -397,7 +534,7 @@ skillCategories: [
         url: ""
       },
       {
-        name: "A venir...",
+        name: "A venir pour Septembre",
         description: "",
         url: ""
       }

@@ -835,7 +835,7 @@ section + section { border-top: 1px solid var(--line); }
 }
 
 #project-detail .project-detail-lead {
-  max-width: 65ch;
+  max-width: none;
   font-size: 1.05rem;
   margin: var(--space-2) 0 var(--space-3);
 }
@@ -872,7 +872,7 @@ section + section { border-top: 1px solid var(--line); }
   font-size: 0.9rem;
   color: var(--ink-soft);
   margin: var(--space-1) 0 0;
-  max-width: 68ch;
+  max-width: none;
 }
 
 .project-gallery--compact {
@@ -906,10 +906,15 @@ section + section { border-top: 1px solid var(--line); }
    ============================================================ */
 /* Conteneur global : les 4 catégories, toutes sur la même ligne */
 .hub-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0 var(--space-4);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0 var(--space-5);
   align-items: start;
+}
+
+.hub-grid .hub-group {
+  flex: 1 1 320px;
 }
 
 /* Grille des liens À L'INTÉRIEUR d'une catégorie : empilés en colonne */
@@ -941,7 +946,6 @@ section + section { border-top: 1px solid var(--line); }
 
 /* Espace modéré entre le sommaire (Accès rapide) et les réalisations */
 #projects-hub { padding-bottom: var(--space-3); }
-#projects { padding-top: var(--space-3); }
 
 .hub-group { margin-bottom: var(--space-4); }
 .hub-group:last-child { margin-bottom: 0; }
@@ -1217,8 +1221,14 @@ code, pre, kbd {
   .nav .wrap { height: 60px; }
   .nav.open .nav-links { top: 60px; }
   .projects-grid { grid-template-columns: 1fr; }
-  .hub-grid { grid-template-columns: 1fr; gap: var(--space-4); }
+  .hub-grid { flex-direction: column; align-items: stretch; gap: var(--space-4); }
+  .hub-grid .hub-group { max-width: none; }
   .doc-preview-group { grid-template-columns: 1fr; }
+    .stage-item {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+  .stage-item::before { font-size: 1.6rem; }
 }
 
 /* ============================================================
@@ -1320,4 +1330,114 @@ code, pre, kbd {
     width: 42px;
     height: 42px;
   }
+}
+
+/* ============================================================
+   PAGE STAGE — onglets + récit
+   ============================================================ */
+.stage-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: var(--space-3);
+}
+
+.stage-tab {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  padding: 0.5rem 1.1rem;
+  cursor: pointer;
+}
+.stage-tab:hover { border-color: var(--accent); color: var(--accent); }
+.stage-tab.active {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.stage-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  margin-bottom: var(--space-4);
+}
+
+.stage-presentation {
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: var(--ink);
+  max-width: none;
+  margin-bottom: var(--space-5);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--line);
+}
+
+.stage-section { margin-bottom: var(--space-5); }
+.stage-section:last-child { margin-bottom: 0; }
+
+.stage-section-intro {
+  max-width: none;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: var(--space-4);
+}
+
+.stage-section { counter-reset: stage-item; }
+
+.stage-item {
+  counter-increment: stage-item;
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: var(--space-4);
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--line);
+}
+.stage-item:last-child { border-bottom: none; }
+
+.stage-item::before {
+  content: counter(stage-item, decimal-leading-zero);
+  font-family: var(--font-mono);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--comment);
+  opacity: 0.55;
+  line-height: 1;
+}
+
+.stage-item-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.stage-item img {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  max-height: 280px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  cursor: zoom-in;
+  margin-bottom: var(--space-2);
+}
+
+.stage-item-caption {
+  font-size: 1rem;
+  line-height: 1.65;
+  max-width: none;
+  margin-bottom: var(--space-2);
+}
+
+.stage-item-competences {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }

@@ -200,19 +200,15 @@ function renderProjectsHub() {
   if (!container || !CONTENT.projects) return;
 
   const groups = groupProjectsByCategory();
+  const isStagePage = document.body.dataset.page === "stage";
+  const categories = PROJECT_CATEGORIES.filter(c => isStagePage ? c.key.startsWith("stage") : !c.key.startsWith("stage"));
 
-  PROJECT_CATEGORIES.forEach(cat => {
+  categories.forEach(cat => {
     const items = groups[cat.key];
     if (!items || items.length === 0) return;
 
     const groupWrap = el("div", { class: "hub-group" });
-
-    const titleLink = el("a", {
-      class: "hub-group-title",
-      text: cat.label,
-      attrs: { href: `#categorie-${cat.key}` }
-    });
-    groupWrap.appendChild(titleLink);
+    groupWrap.appendChild(el("div", { class: "hub-group-title", text: cat.label }));
 
     const grid = el("div", { class: "hub-links-grid" });
     items.forEach(proj => {
@@ -295,8 +291,10 @@ function renderProjects() {
   if (!container || !CONTENT.projects) return;
 
   const groups = groupProjectsByCategory();
+  const isStagePage = document.body.dataset.page === "stage";
+  const categories = PROJECT_CATEGORIES.filter(c => isStagePage ? c.key.startsWith("stage") : !c.key.startsWith("stage"));
 
-  PROJECT_CATEGORIES.forEach(cat => {
+  categories.forEach(cat => { 
     const items = groups[cat.key];
     if (!items || items.length === 0) return;
 
@@ -435,6 +433,81 @@ function renderInfosPersonnelles() {
     item.appendChild(el("span", { class: "info-label", text: info.label }));
     item.appendChild(el("span", { class: "info-value", text: info.value }));
     container.appendChild(item);
+  });
+}
+
+let currentStageKey = "1ere-annee";
+
+function renderStagePage() {
+  const tabsContainer = document.querySelector("[data-stage-tabs]");
+  const contentContainer = document.querySelector("[data-stage-content]");
+  if (!tabsContainer || !contentContainer || !CONTENT.stages) return;
+
+  const keys = Object.keys(CONTENT.stages);
+  if (!keys.includes(currentStageKey)) currentStageKey = keys[0];
+
+  tabsContainer.innerHTML = "";
+  keys.forEach(key => {
+    const btn = el("button", {
+      class: `stage-tab${key === currentStageKey ? " active" : ""}`,
+      text: CONTENT.stages[key].label,
+      attrs: { type: "button" }
+    });
+    btn.addEventListener("click", () => {
+      currentStageKey = key;
+      renderStagePage();
+    });
+    tabsContainer.appendChild(btn);
+  });
+
+  contentContainer.innerHTML = "";
+  const stage = CONTENT.stages[currentStageKey];
+  if (!stage) return;
+
+  if (stage.lieu || stage.periode) {
+    const meta = el("div", { class: "stage-meta" });
+    if (stage.lieu) meta.appendChild(el("span", { text: stage.lieu }));
+    if (stage.periode) meta.appendChild(el("span", { text: stage.periode }));
+    contentContainer.appendChild(meta);
+  }
+  
+  if (stage.presentationGenerale) {
+    contentContainer.appendChild(el("p", { class: "stage-presentation", text: stage.presentationGenerale }));
+  }
+
+  (stage.sections || []).forEach(section => {
+    const sectionEl = el("div", { class: "stage-section" });
+
+    const head = el("div", { class: "section-head" });
+    head.appendChild(el("h2", { text: section.title }));
+    sectionEl.appendChild(head);
+
+    if (section.intro) sectionEl.appendChild(el("p", { class: "stage-section-intro", text: section.intro }));
+
+    (section.items || []).forEach(item => {
+      const itemEl = el("div", { class: "stage-item" });
+      const itemBody = el("div", { class: "stage-item-body" });
+
+      if (item.image) {
+        const img = el("img", { attrs: { src: item.image, alt: item.caption || section.title } });
+        img.style.cursor = "zoom-in";
+        img.addEventListener("click", () => openLightbox(item.image, item.caption || section.title));
+        itemBody.appendChild(img);
+      }
+
+      if (item.caption) itemBody.appendChild(el("p", { class: "stage-item-caption", text: item.caption }));
+
+      if (item.competences && item.competences.length) {
+        const compWrap = el("div", { class: "stage-item-competences" });
+        item.competences.forEach(c => compWrap.appendChild(el("span", { class: "competence-pill", text: c })));
+        itemBody.appendChild(compWrap);
+      }
+
+      itemEl.appendChild(itemBody);
+      sectionEl.appendChild(itemEl);
+    });
+
+    contentContainer.appendChild(sectionEl);
   });
 }
 
@@ -637,6 +710,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderVeilleIntro();
   renderVeille();
   renderRectorat();
+  renderStagePage();
   renderVeilleApercu();
   initNavToggle();
   initScrollTopButton();
