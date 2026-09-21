@@ -470,12 +470,35 @@ function renderStagePage() {
     if (stage.periode) meta.appendChild(el("span", { text: stage.periode }));
     contentContainer.appendChild(meta);
   }
-  
-  if (stage.presentationGenerale) {
-    contentContainer.appendChild(el("p", { class: "stage-presentation", text: stage.presentationGenerale }));
+
+  // 1. INTRO / MISE EN CONTEXTE
+  if (stage.intro) {
+    const introBlock = el("div", { class: "stage-block stage-intro" });
+    introBlock.appendChild(el("span", { class: "stage-block-tag", text: "Contexte" }));
+    introBlock.appendChild(el("p", { text: stage.intro }));
+    contentContainer.appendChild(introBlock);
   }
 
-  (stage.sections || []).forEach(section => {
+  // 2. PROBLÈME & SOLUTION
+  if (stage.probleme || stage.solution) {
+    const psGrid = el("div", { class: "stage-problem-solution" });
+    if (stage.probleme) {
+      const probBlock = el("div", { class: "stage-problem" });
+      probBlock.appendChild(el("span", { class: "stage-block-tag", text: "Problème" }));
+      probBlock.appendChild(el("p", { text: stage.probleme }));
+      psGrid.appendChild(probBlock);
+    }
+    if (stage.solution) {
+      const solBlock = el("div", { class: "stage-solution" });
+      solBlock.appendChild(el("span", { class: "stage-block-tag", text: "Solution" }));
+      solBlock.appendChild(el("p", { text: stage.solution }));
+      psGrid.appendChild(solBlock);
+    }
+    contentContainer.appendChild(psGrid);
+  }
+
+  // 3. PARTIES DÉTAILLÉES
+  (stage.parties || []).forEach(section => {
     const sectionEl = el("div", { class: "stage-section" });
 
     const head = el("div", { class: "section-head" });
@@ -488,10 +511,11 @@ function renderStagePage() {
       const itemEl = el("div", { class: "stage-item" });
       const itemBody = el("div", { class: "stage-item-body" });
 
-      if (item.image) {
-        const img = el("img", { attrs: { src: item.image, alt: item.caption || section.title } });
+      const itemImages = item.images && item.images.length ? item.images : (item.image ? [item.image] : []);
+      if (itemImages.length) {
+        const img = el("img", { attrs: { src: itemImages[0], alt: item.caption || section.title } });
         img.style.cursor = "zoom-in";
-        img.addEventListener("click", () => openLightbox(item.image, item.caption || section.title));
+        img.addEventListener("click", () => openLightboxGallery(itemImages, item.caption || section.title, 0));
         itemBody.appendChild(img);
       }
 
@@ -509,6 +533,29 @@ function renderStagePage() {
 
     contentContainer.appendChild(sectionEl);
   });
+
+  // 4. COMPÉTENCES COMPLÉMENTAIRES
+  if (stage.competencesComplementaires && stage.competencesComplementaires.length) {
+    const extraBlock = el("div", { class: "stage-extra-skills" });
+    const head = el("div", { class: "section-head" });
+    head.appendChild(el("h2", { text: "Autres compétences mobilisées" }));
+    extraBlock.appendChild(head);
+    extraBlock.appendChild(el("p", { class: "stage-section-intro", text: "Compétences développées durant ce stage, en dehors du fil principal du projet présenté ci-dessus." }));
+
+    const pillsWrap = el("div", { class: "stage-extra-skills-list" });
+    stage.competencesComplementaires.forEach(c => pillsWrap.appendChild(el("span", { class: "competence-pill", text: c })));
+    extraBlock.appendChild(pillsWrap);
+
+    contentContainer.appendChild(extraBlock);
+  }
+
+  // 5. CONCLUSION
+  if (stage.conclusion) {
+    const concBlock = el("div", { class: "stage-conclusion" });
+    concBlock.appendChild(el("span", { class: "stage-block-tag", text: "Conclusion" }));
+    concBlock.appendChild(el("p", { text: stage.conclusion }));
+    contentContainer.appendChild(concBlock);
+  }
 }
 
 function renderRectorat() {
@@ -643,10 +690,16 @@ function ensureLightbox() {
 
   overlay = el("div", { class: "lightbox-overlay", attrs: { role: "dialog", "aria-modal": "true" } });
   const closeBtn = el("button", { class: "lightbox-close", html: "&times;", attrs: { type: "button", "aria-label": "Fermer" } });
+  const prevBtn = el("button", { class: "lightbox-nav lightbox-prev", html: "&larr;", attrs: { type: "button", "aria-label": "Image précédente" } });
+  const nextBtn = el("button", { class: "lightbox-nav lightbox-next", html: "&rarr;", attrs: { type: "button", "aria-label": "Image suivante" } });
+  const counter = el("div", { class: "lightbox-counter" });
   const img = el("img", { attrs: { alt: "" } });
 
   overlay.appendChild(closeBtn);
+  overlay.appendChild(prevBtn);
   overlay.appendChild(img);
+  overlay.appendChild(nextBtn);
+  overlay.appendChild(counter);
   document.body.appendChild(overlay);
 
   const close = () => {
@@ -655,18 +708,57 @@ function ensureLightbox() {
   };
   closeBtn.addEventListener("click", close);
   overlay.addEventListener("click", (e) => { if (e.target === overlay) close(); });
-  document.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
+
+  document.addEventListener("keydown", (e) => {
+    if (!overlay.classList.contains("open")) return;
+    if (e.key === "Escape") close();
+    if (e.key === "ArrowRight") nextBtn.click();
+    if (e.key === "ArrowLeft") prevBtn.click();
+  });
+
+  prevBtn.addEventListener("click", () => {
+    if (!overlay._images) return;
+    overlay._index = (overlay._index - 1 + overlay._images.length) % overlay._images.length;
+    updateLightboxImage(overlay);
+  });
+  nextBtn.addEventListener("click", () => {
+    if (!overlay._images) return;
+    overlay._index = (overlay._index + 1) % overlay._images.length;
+    updateLightboxImage(overlay);
+  });
 
   return overlay;
 }
 
-function openLightbox(src, alt) {
-  const overlay = ensureLightbox();
+function updateLightboxImage(overlay) {
   const img = overlay.querySelector("img");
-  img.src = src;
-  img.alt = alt || "";
+  const counter = overlay.querySelector(".lightbox-counter");
+  const prevBtn = overlay.querySelector(".lightbox-prev");
+  const nextBtn = overlay.querySelector(".lightbox-next");
+  const images = overlay._images;
+  const index = overlay._index;
+
+  img.src = images[index].src;
+  img.alt = images[index].alt || "";
+
+  const hasMultiple = images.length > 1;
+  counter.textContent = hasMultiple ? `${index + 1} / ${images.length}` : "";
+  counter.style.display = hasMultiple ? "block" : "none";
+  prevBtn.hidden = !hasMultiple;
+  nextBtn.hidden = !hasMultiple;
+}
+
+function openLightboxGallery(images, alt, startIndex = 0) {
+  const overlay = ensureLightbox();
+  overlay._images = images.map(src => ({ src, alt }));
+  overlay._index = startIndex;
+  updateLightboxImage(overlay);
   overlay.classList.add("open");
   document.body.style.overflow = "hidden";
+}
+
+function openLightbox(src, alt) {
+  openLightboxGallery([src], alt, 0);
 }
 
 function initFooterYear() {

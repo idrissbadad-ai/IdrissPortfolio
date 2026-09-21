@@ -47,89 +47,133 @@ const CONTENT = {
     { label: "Permis", value: "En cours" }
   ],
 
-    stages: {
+  stages: {
     "1ere-annee": {
       label: "1ère année",
-      lieu: "Hôtel du Département de la Seine-Maritime — Rouen",
+      lieu: "Département de la Seine-Maritime — Service Innovation et Développement (SID), Rouen",
       periode: "Du 25 mai au 26 juin 2026",
-      presentationGenerale: "Projet : la création d'une application de gestion de tablette. Avant cela, la gestion du matériel prêté par le département était faite avec des documents papier, ce qui rendait sa gestion compliquée. La solution et le but de mon stage étaient donc les suivants : réaliser une application qui permet de gérer la préparation des tablettes prêtées pour les collégiens à la rentrée 2026.",
-      sections: [
+
+      intro: "J'intègre le Service Innovation et Développement (SID), qui se charge du développement et du maintien en conditions opérationnelles des logiciels du Département. Ma mission : développer une application permettant à un prestataire externe de préparer et suivre la distribution de tablettes Apple aux collégiens de Seine-Maritime.",
+
+      probleme: "La gestion des tablettes prêtées était jusqu'ici réalisée au format papier, ce qui rendait le suivi complexe et peu sécurisé. Le prestataire chargé de la distribution avait besoin d'un outil centralisé pour suivre sa progression.",
+
+      solution: "Une application permettant d'importer les données des collégiens et des tablettes via des fichiers CSV, puis de faire évoluer le statut de chaque tablette (préparée / non préparée), avec une vue d'ensemble de l'avancement par établissement et par classe.",
+
+      parties: [
         {
-          title: "Problème ?",
-          intro: "La seine maritime gere la gestion des pret commes les tablettes et PC à l'aide document papier ce qui rend compliqué sa gestion."
-        },
-        {
-          title: "Solution",
-          intro: "Informatisation de cette gestion pour faciliter et mieu comprendre."
-        },
-        {
-          title: "Contexte",
-          intro: "Je dois donc réaliser dans mon cas, une application de gestion de tablette afin d'aider des prestaires a preparer les tablettes des 15 000 collegiens du departement afin de les distribués pour la rentrée 2026.",
+          title: "Organisation et suivi du projet",
+          intro: "Les tâches m'étaient transmises principalement via Microsoft Teams. Mon tuteur m'a ensuite fait découvrir RedMine, un outil de gestion de projet permettant de suivre mes tâches, leurs échéances et l'avancement global du projet.",
           items: [
             {
-              image: "assets/1ere/Stage/preuve_reunion.png", // ex: "assets/1ere/Stage/contexte-1.png"
-              caption: "Lors de la 1ère semaine reunion avec les prestataires afin de connaitre leur attente et besoins, voici une preuves de mes prises de notes :",
-              competences: ["Répondre aux incidents et aux demandes", "Organiser son développement professionnel"]
-            },
-            {
-              image: "", // ex: "assets/1ere/Stage/contexte-1.png"
-              caption: "Décris ce que montre cette image.",
-              competences: ["Répondre aux incidents et aux demandes", "Organiser son développement professionnel"]
-            },
+              // TODO : capture du tableau de bord RedMine (page 3 du rapport)
+              image: "assets/1ere/Stage/tableau_bord.png",
+              caption: "Tableau de bord RedMine utilisé pour suivre l'avancement des tâches confiées par mon tuteur.",
+              competences: ["B1.2 — Répondre aux incidents et aux demandes"]
+            }
           ]
         },
         {
           title: "Environnement technologique",
-          intro: "Décris ici les outils, langages et technologies utilisés dans l'entreprise durant ce stage.",
+          intro: "Le projet a été développé sur une VM Windows dédiée (accès sécurisé par double authentification), avec VSCodium comme IDE. Mon tuteur m'a confié SvelteKit, un framework jamais utilisé dans le service — j'ai dû m'y former en autonomie dès la première semaine via le tutoriel interactif officiel de Svelte.",
           items: [
             {
-              image: "", // ex: "assets/1ere/Stage/env-1.png"
-              caption: "Décris ce que montre cette image.",
-              competences: ["Conception et mise en place d'une base de données NoSQL"]
+              image: "assets/1ere/Stage/install_VM.png",
+              caption: "Machine virtuelle Windows dédiée au projet, isolée pour des raisons de sécurité.",
+              competences: [],
+            },
+            {
+              // TODO : capture de tes prises de notes sur la réactivité Svelte (page 4-5 du rapport)
+              image: "assets/1ere/Stage/note.png",
+              caption: "Prises de notes durant l'autoformation SvelteKit : réactivité, routing par fichiers, composants réutilisables.",
+              competences: ["S'adapter à un nouvel environnement technologique"]
+            },
+            {
+              images: ["assets/1ere/Stage/pack_compass.png", "assets/1ere/Stage/BD_Nosql.png"],
+              caption: "Base de données NoSQL orientée documents avec MongoDB, gérée via l'interface graphique MongoDB Compass — mise en application directe de ma veille technologique sur le NoSQL.",
+              competences: []
             }
           ]
         },
         {
           title: "Conception",
-          intro: "Conception d'un projet en SvelteKit.",
+          intro: "Avant de coder, j'ai conçu plusieurs maquettes sur Balsamiq pour cadrer les 3 pages attendues par le prestataire (connexion, vue d'ensemble, gestion), ainsi qu'un MCD pour structurer les données. Cette étape a permis de valider l'interface avec mon tuteur et le prestataire avant d'écrire la moindre ligne de code.",
           items: [
             {
-              image: "", // ex: "assets/1ere/Stage/env-1.png"
-              caption: "Décris ce que montre cette image.",
-              competences: ["Conception et mise en place d'une base de données NoSQL"]
+              images: [
+              "assets/1ere/Stage/maquette_connexion.png",
+              "assets/1ere/Stage/maquette_vue_ensemble.png",
+              "assets/1ere/Stage/maquette_gestion.png"
+              ],
+              caption: "Maquette de la page de gestion, permettant aux techniciens de filtrer les élèves et préparer leurs tablettes.",
+              competences: ["B1.4 — Travailler en mode projet"],
+
+            },
+            {
+              image: "assets/1ere/Stage/IBA_MCD.png",
+              caption: "Modèle Conceptuel de Données (MCD) de l'application.",
+              competences: []
             }
           ]
         },
         {
-          title: "Résultat final",
-          intro: "Voici le résulat final :",
+          title: "Base de données",
+          intro: "J'ai créé la base MongoDB « gestion-tablettes » avec une collection « eleves » : chaque document regroupe à la fois les infos de l'élève et celles de sa tablette associée, sans jointure — un exemple concret de la flexibilité du NoSQL par rapport au modèle relationnel classique.",
           items: [
             {
-              image: "", // ex: "assets/1ere/Stage/env-1.png"
-              caption: "Décris ce que montre cette image.",
-              competences: ["Conception et mise en place d'une base de données NoSQL"]
+              // TODO : capture de la structure de la base / d'un document MongoDB (page 7 du rapport)
+              image: "assets/1ere/Stage/BD_structure.png",
+              caption: "Structure de la base « gestion-tablettes » et exemple de document stocké dans la collection « eleves ».",
+              competences: ["B1.1 — Gérer le patrimoine informatique"]
+            },
+            {
+              // TODO : capture de l'import CSV dans MongoDB Compass (page 7-8 du rapport)
+              image: "assets/1ere/Stage/BD_test.png",
+              caption: "Alimentation de la base à partir d'un fichier CSV de test (~16 000 enregistrements simulés) via MongoDB Compass.",
+              competences: []
             }
           ]
         },
-      ]
-    },
-    "2eme-annee": {
-      label: "2ème année",
-      lieu: "À venir",
-      periode: "À venir",
-      sections: [
         {
-          title: "Contexte",
-          intro: "Sera complété lors du stage de 2ème année.",
-          items: []
+          title: "Développement",
+          intro: "Mtn la partie la plus interresante",
+          items: [
+            {
+              image: "",
+              caption: "Page de vue d'ensemble ",
+              competences: ["B1.3 — Développer la présence en ligne de l'organisation"]
+            },
+            {
+              image: "",
+              caption: "Déploiement du projet sur GitHub",
+              competences: []
+            }
+          ]
         },
         {
-          title: "Environnement technologique",
-          intro: "Sera complété lors du stage de 2ème année.",
-          items: []
+          title: "Résultats",
+          intro: "Aprés mon stage le projet a ete ameliorer et dev par les equipes du departement, j'ai pu avoir un des immages du projet grace a mon tuteur ",
+          items: [
+            {
+              images: [ "assets/1ere/Stage/app_vue_avant.png","assets/1ere/Stage/resultat_vue_apres.png"],
+              caption: "Page de vue d'ensemble par établissement et par collège avec un pourcentage de préparation pour chaque niveau",
+              competences: ["B1.3 — Développer la présence en ligne de l'organisation"]
+            },
+            {
+              images: ["assets/1ere/Stage/app_gestion.png", "assets/1ere/Stage/resultat_gestion_apres.png"],
+              caption: "Page de gestion qui nous permet de préparer les tablettes",
+              competences: []
+            }
+          ]
         }
-      ]
-    }
+      ],
+
+      competencesComplementaires: [
+        "Travailler en mode projet : Présentation d'un powerpoint aux prestatiares afin de leur montrer notre idée pour la réalisation de l'application.",
+        
+      ],
+
+      conclusion: "Ce stage m'a donné une vision concrète du monde professionnel et des méthodes de travail en équipe de développement. J'ai consolidé des compétences techniques solides sur SvelteKit, tout en développant mon autonomie — notamment face au manque de support technique sur une technologie encore récente pour le service. Cette expérience a confirmé mon intérêt pour le développement web."
+    },
   },
 
   // ----------------------------------------------------------
@@ -158,7 +202,7 @@ const CONTENT = {
       detail: "Spécialité SLAM (Solutions Logicielles et Applications Métiers)"
     },
     {
-      periode: "2022 – 2025",
+      periode: "2025",
       etablissement: "Lycée Gallée",
       lieu: "76520 Franqueville-Saint-Pierre",
       diplome: "Baccalauréat général, spécialités Littérature Anglaise et Histoire Géopolitique",
@@ -352,18 +396,14 @@ skillCategories: [
       ]
     },
     {
-      title: "Rapport de stage présentant les missions réalisées, les compétences mobilisées et les outils utilisés. ",
+      title: "Création d'un Linkedin",
       categorie: "1ere-annee",
       context: "Projet de BTS",
-      competences: ["Gérer le patrimoine informatique : Recenser et identifier les ressources numériques", "Travailler en mode projet : Planifier les activités","Organiser son développement professionnel : Développer son projet professionnel"],
-      description: "Décris en 2-3 phrases le besoin, ta solution, et ton rôle exact dans le projet.",
-      link: "",
-      image: "assets/1ere/Images-venir.png",
-      gallery: [
-        { image: "", caption: "Décris ce que montre cette capture." },
-        { image: "", caption: "Décris ce que montre cette capture." }
-      ]
+      competences: [],
+      description: "Création d'un compte Linkedin pour promouvoir ma profil aux entreprises",
+      link: "https://www.linkedin.com/in/idriss-badad-56aaa73a0/",
     },
+    
     {
       title: "A venir...",
       categorie: "2eme-annee",
