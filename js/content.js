@@ -44,7 +44,7 @@ const CONTENT = {
     { label: "Date de naissance", value: "24 avril 2007" },
     { label: "Ville", value: "Franqueville-Saint-Pierre" },
     { label: "Nationalité", value: "Française" },
-    { label: "Permis", value: "En cours" }
+    { label: "Permis", value: "Permis B" }
   ],
 
   stages: {
@@ -53,7 +53,7 @@ const CONTENT = {
       lieu: "Département de la Seine-Maritime — Service Innovation et Développement (SID), Rouen",
       periode: "Du 25 mai au 26 juin 2026",
 
-      intro: "J'intègre le Service Innovation et Développement (SID), qui se charge du développement et du maintien en conditions opérationnelles des logiciels du Département. Ma mission : développer une application permettant à un prestataire externe de préparer et suivre la distribution de tablettes Apple aux collégiens de Seine-Maritime.",
+      intro: "Le Département de la Seine Maritime est une ollectivité territoriale normande chargée de la gestion des aides sociales, des collèges et des infrastructures routières afin d'améliorer le quotidien de ses habitants. Pour ma part, j'ai intégré le Service Innovation et Développement (SID), qui se charge du développement et du maintien en conditions opérationnelles des logiciels du Département.",
 
       probleme: "La gestion des tablettes prêtées était jusqu'ici réalisée au format papier, ce qui rendait le suivi complexe et peu sécurisé. Le prestataire chargé de la distribution avait besoin d'un outil centralisé pour suivre sa progression.",
 
