@@ -52,6 +52,7 @@ const CONTENT = {
       label: "1ère année",
       lieu: "Département de la Seine-Maritime — Service Innovation et Développement (SID), Rouen",
       periode: "Du 25 mai au 26 juin 2026",
+      image: "assets/1ere/Stage/departemenr.jpeg", // photo/logo représentant l'organisme d'accueil
 
       intro: "Le Département de la Seine Maritime est une ollectivité territoriale normande chargée de la gestion des aides sociales, des collèges et des infrastructures routières afin d'améliorer le quotidien de ses habitants. Pour ma part, j'ai intégré le Service Innovation et Développement (SID), qui se charge du développement et du maintien en conditions opérationnelles des logiciels du Département.",
 
@@ -135,18 +136,24 @@ const CONTENT = {
         },
         {
           title: "Développement",
-          intro: "Mtn la partie la plus interresante",
+          intro: "La partie de création de la logique et mise en application des maquettes",
           items: [
             {
-              image: "",
-              caption: "Page de vue d'ensemble ",
-              competences: ["B1.3 — Développer la présence en ligne de l'organisation"]
+              image: "assets/1ere/Stage/connexion_bdd.png",
+              caption: "Code de connexion à la base de donnée 'admin'",
+              competences: []
             },
             {
-              image: "",
-              caption: "Déploiement du projet sur GitHub",
+              image: "assets/1ere/Stage/liaison_bdd_tableau.png",
+              caption: "Code de gestion des données pour les insérer dans les colonnes du tableau de gestion",
               competences: []
-            }
+            },
+            {
+              images: [ "assets/1ere/Stage/creation_filtres.png", "assets/1ere/Stage/resultat_filtres.png"],
+              caption: "Création de la zone de filtre pour faciliter la gestion des tablettes",
+              competences: []
+            },
+
           ]
         },
         {
@@ -168,11 +175,31 @@ const CONTENT = {
       ],
 
       competencesComplementaires: [
-        "Travailler en mode projet : Présentation d'un powerpoint aux prestatiares afin de leur montrer notre idée pour la réalisation de l'application.",
-        
+      {
+        text: "Travailler en mode projet : Présentation d'un PowerPoint aux prestataires afin de leur montrer notre idée pour la réalisation de l'application.",
+        image: "assets/1ere/Stage/PPW_1.png"                                 
+      },    
+      {
+        image: "assets/1ere/Stage/Teams.png",
+        text: "Travailler en mode projet : Utilisation de Teams pour transmettre les informations avec l'équipe."
+
+      },        
       ],
 
       conclusion: "Ce stage m'a donné une vision concrète du monde professionnel et des méthodes de travail en équipe de développement. J'ai consolidé des compétences techniques solides sur SvelteKit, tout en développant mon autonomie — notamment face au manque de support technique sur une technologie encore récente pour le service. Cette expérience a confirmé mon intérêt pour le développement web."
+    },
+
+      "2eme-annee": {
+      label: "2ème année",
+      lieu: "Ca va venir Inchallah......",
+      periode: "",
+      image: "",
+      intro: "",
+      probleme: "",
+      solution: "",
+      parties: [],
+      competencesComplementaires: [],
+      conclusion: ""
     },
   },
 

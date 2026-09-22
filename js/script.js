@@ -473,10 +473,21 @@ function renderStagePage() {
 
   // 1. INTRO / MISE EN CONTEXTE
   if (stage.intro) {
+    const introWrap = el("div", { class: "stage-intro-grid" });
+
     const introBlock = el("div", { class: "stage-block stage-intro" });
     introBlock.appendChild(el("span", { class: "stage-block-tag", text: "Contexte" }));
     introBlock.appendChild(el("p", { text: stage.intro }));
-    contentContainer.appendChild(introBlock);
+    introWrap.appendChild(introBlock);
+
+    if (stage.image) {
+      const img = el("img", { class: "stage-intro-image", attrs: { src: stage.image, alt: stage.lieu || "Lieu du stage" } });
+      img.style.cursor = "zoom-in";
+      img.addEventListener("click", () => openLightbox(stage.image, stage.lieu || ""));
+      introWrap.appendChild(img);
+    }
+
+    contentContainer.appendChild(introWrap);
   }
 
   // 2. PROBLÈME & SOLUTION
@@ -542,9 +553,24 @@ function renderStagePage() {
     extraBlock.appendChild(head);
     extraBlock.appendChild(el("p", { class: "stage-section-intro", text: "Compétences développées durant ce stage, en dehors du fil principal du projet présenté ci-dessus." }));
 
-    const pillsWrap = el("div", { class: "stage-extra-skills-list" });
-    stage.competencesComplementaires.forEach(c => pillsWrap.appendChild(el("span", { class: "competence-pill", text: c })));
-    extraBlock.appendChild(pillsWrap);
+    const listWrap = el("div", { class: "stage-extra-skills-list" });
+    stage.competencesComplementaires.forEach(c => {
+      const text = typeof c === "string" ? c : c.text;
+      const image = typeof c === "object" ? c.image : null;
+
+      const item = el("div", { class: "extra-skill-item" });
+      item.appendChild(el("span", { class: "competence-pill", text: text }));
+
+      if (image) {
+        const img = el("img", { class: "extra-skill-image", attrs: { src: image, alt: text } });
+        img.style.cursor = "zoom-in";
+        img.addEventListener("click", () => openLightbox(image, text));
+        item.appendChild(img);
+      }
+
+      listWrap.appendChild(item);
+    });
+    extraBlock.appendChild(listWrap);
 
     contentContainer.appendChild(extraBlock);
   }

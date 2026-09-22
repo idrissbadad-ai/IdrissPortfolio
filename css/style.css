@@ -1525,14 +1525,29 @@ code, pre, kbd {
   margin-bottom: 0.6rem;
 }
 
-.stage-intro {
+.stage-intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: var(--space-4);
+  align-items: start;
   margin-bottom: var(--space-5);
 }
+
+.stage-intro { margin-bottom: 0; }
 .stage-intro p {
   font-size: 1.1rem;
   line-height: 1.75;
   color: var(--ink);
   max-width: none;
+}
+
+.stage-intro-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
 }
 
 .stage-problem-solution {
@@ -1588,8 +1603,24 @@ code, pre, kbd {
 .stage-extra-skills-list {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
-  max-width: 60ch;
+  gap: var(--space-3);
+  max-width: none;
+}
+
+.extra-skill-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.extra-skill-image {
+  width: 100%;
+  max-width: 420px;
+  max-height: 260px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
 }
 
 /* ============================================================
