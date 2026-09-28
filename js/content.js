@@ -54,7 +54,7 @@ const CONTENT = {
       periode: "Du 25 mai au 26 juin 2026",
       image: "assets/1ere/Stage/departemenr.jpeg", // photo/logo représentant l'organisme d'accueil
 
-      intro: "Le Département de la Seine Maritime est une ollectivité territoriale normande chargée de la gestion des aides sociales, des collèges et des infrastructures routières afin d'améliorer le quotidien de ses habitants. Pour ma part, j'ai intégré le Service Innovation et Développement (SID), qui se charge du développement et du maintien en conditions opérationnelles des logiciels du Département.",
+      intro: "Le Département de la Seine Maritime est une collectivité territoriale normande chargée de la gestion des aides sociales, des collèges et des infrastructures routières afin d'améliorer le quotidien de ses habitants. Pour ma part, j'ai intégré le Service Innovation et Développement (SID), qui se charge du développement et du maintien en conditions opérationnelles des logiciels du Département.",
 
       probleme: "La gestion des tablettes prêtées était jusqu'ici réalisée au format papier, ce qui rendait le suivi complexe et peu sécurisé. Le prestataire chargé de la distribution avait besoin d'un outil centralisé pour suivre sa progression.",
 
@@ -67,10 +67,18 @@ const CONTENT = {
           items: [
             {
               // TODO : capture du tableau de bord RedMine (page 3 du rapport)
-              image: "assets/1ere/Stage/tableau_bord.png",
+              image: ["assets/1ere/Stage/tableau_bord.png"],
+              text: "Travailler en mode projet : Utilisation de Teams pour transmettre les informations avec l'équipe.",
               caption: "Tableau de bord RedMine utilisé pour suivre l'avancement des tâches confiées par mon tuteur.",
               competences: ["B1.2 — Répondre aux incidents et aux demandes"]
-            }
+            },
+            {
+              // TODO : capture du tableau de bord RedMine (page 3 du rapport)
+              image: ["assets/1ere/Stage/Teams.png"],
+              text: "Travailler en mode projet : Utilisation de Teams pour transmettre les informations avec l'équipe.",
+              caption: "Tableau de bord RedMine utilisé pour suivre l'avancement des tâches confiées par mon tuteur.",
+              competences: ["B1.2 — Répondre aux incidents et aux demandes"]
+            },
           ]
         },
         {
@@ -118,7 +126,7 @@ const CONTENT = {
         },
         {
           title: "Base de données",
-          intro: "J'ai créé la base MongoDB « gestion-tablettes » avec une collection « eleves » : chaque document regroupe à la fois les infos de l'élève et celles de sa tablette associée, sans jointure — un exemple concret de la flexibilité du NoSQL par rapport au modèle relationnel classique.",
+          intro: "J'ai créé la base MongoDB « gestion-tablettes » avec une collection « eleves » : chaque document regroupe à la fois les informations de l'élève et celles de sa tablette associée, sans jointure — un exemple concret de la flexibilité du NoSQL par rapport au modèle relationnel classique.",
           items: [
             {
               // TODO : capture de la structure de la base / d'un document MongoDB (page 7 du rapport)
@@ -158,10 +166,10 @@ const CONTENT = {
         },
         {
           title: "Résultats",
-          intro: "Aprés mon stage le projet a ete ameliorer et dev par les equipes du departement, j'ai pu avoir un des immages du projet grace a mon tuteur ",
+          intro: "Après mon stage, le projet a été amélioré et développé par les équipes du Département. J’ai pu obtenir quelques images de l’évolution du projet grâce à mon tuteur.",
           items: [
             {
-              images: [ "assets/1ere/Stage/app_vue_avant.png","assets/1ere/Stage/resultat_vue_apres.png"],
+              images: ["assets/1ere/Stage/app_vue_avant.png","assets/1ere/Stage/resultat_vue_apres.png"],
               caption: "Page de vue d'ensemble par établissement et par collège avec un pourcentage de préparation pour chaque niveau",
               competences: ["B1.3 — Développer la présence en ligne de l'organisation"]
             },
@@ -178,15 +186,10 @@ const CONTENT = {
       {
         text: "Travailler en mode projet : Présentation d'un PowerPoint aux prestataires afin de leur montrer notre idée pour la réalisation de l'application.",
         image: "assets/1ere/Stage/PPW_1.png"                                 
-      },    
-      {
-        image: "assets/1ere/Stage/Teams.png",
-        text: "Travailler en mode projet : Utilisation de Teams pour transmettre les informations avec l'équipe."
-
-      },        
+      }     
       ],
 
-      conclusion: "Ce stage m'a donné une vision concrète du monde professionnel et des méthodes de travail en équipe de développement. J'ai consolidé des compétences techniques solides sur SvelteKit, tout en développant mon autonomie — notamment face au manque de support technique sur une technologie encore récente pour le service. Cette expérience a confirmé mon intérêt pour le développement web."
+      conclusion: "Ce stage m'a donné une vision concrète du monde professionnel et des méthodes de travail en équipe de développement. J'ai consolidé des compétences techniques solides sur SvelteKit, tout en développant mon autonomie, notamment face au manque de support technique sur une technologie encore récente pour le service. Cette expérience a confirmé mon intérêt pour le développement web."
     },
 
       "2eme-annee": {
