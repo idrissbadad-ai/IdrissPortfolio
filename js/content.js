@@ -88,18 +88,18 @@ const CONTENT = {
             {
               image: "assets/1ere/Stage/install_VM.png",
               caption: "Machine virtuelle Windows dédiée au projet, isolée pour des raisons de sécurité.",
-              competences: [],
+              competences: ["B1.6 : Organiser son développement professionnel"],
             },
             {
               // TODO : capture de tes prises de notes sur la réactivité Svelte (page 4-5 du rapport)
               image: "assets/1ere/Stage/note.png",
               caption: "Prises de notes durant l'autoformation SvelteKit : réactivité, routing par fichiers, composants réutilisables.",
-              competences: ["S'adapter à un nouvel environnement technologique"]
+              competences: ["B1.6 : Organiser son développement professionnel"]
             },
             {
               images: ["assets/1ere/Stage/pack_compass.png", "assets/1ere/Stage/BD_Nosql.png"],
               caption: "Base de données NoSQL orientée documents avec MongoDB, gérée via l'interface graphique MongoDB Compass — mise en application directe de ma veille technologique sur le NoSQL.",
-              competences: []
+              competences: ["B1.6 : Organiser son développement professionnel"]
             }
           ]
         },
@@ -120,13 +120,14 @@ const CONTENT = {
             {
               image: "assets/1ere/Stage/IBA_MCD.png",
               caption: "Modèle Conceptuel de Données (MCD) de l'application.",
-              competences: []
+              competences: ["B1.4 — Travailler en mode projet"]
             }
           ]
         },
         {
           title: "Base de données",
           intro: "J'ai créé la base MongoDB « gestion-tablettes » avec une collection « eleves » : chaque document regroupe à la fois les informations de l'élève et celles de sa tablette associée, sans jointure — un exemple concret de la flexibilité du NoSQL par rapport au modèle relationnel classique.",
+          //image : "assets/1ere/Stage/MongoDB-Logo.png",
           items: [
             {
               // TODO : capture de la structure de la base / d'un document MongoDB (page 7 du rapport)
@@ -149,17 +150,17 @@ const CONTENT = {
             {
               image: "assets/1ere/Stage/connexion_bdd.png",
               caption: "Code de connexion à la base de donnée 'admin'",
-              competences: []
+              competences: ["B1.3 — Développer la présence en ligne de l’organisation"]
             },
             {
               image: "assets/1ere/Stage/liaison_bdd_tableau.png",
               caption: "Code de gestion des données pour les insérer dans les colonnes du tableau de gestion",
-              competences: []
+              competences: ["B1.3 — Développer la présence en ligne de l’organisation"]
             },
             {
               images: [ "assets/1ere/Stage/creation_filtres.png", "assets/1ere/Stage/resultat_filtres.png"],
               caption: "Création de la zone de filtre pour faciliter la gestion des tablettes",
-              competences: []
+              competences: ["B1.3 — Développer la présence en ligne de l’organisation"]
             },
 
           ]
@@ -176,7 +177,7 @@ const CONTENT = {
             {
               images: ["assets/1ere/Stage/app_gestion.png", "assets/1ere/Stage/resultat_gestion_apres.png"],
               caption: "Page de gestion qui nous permet de préparer les tablettes",
-              competences: []
+              competences: ["B1.3 — Développer la présence en ligne de l’organisation"]
             }
           ]
         }
