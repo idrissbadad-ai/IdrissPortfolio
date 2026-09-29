@@ -31,14 +31,13 @@ const CONTENT = {
     lastName: "Badad",
     role: "Étudiant BTS SIO — option SLAM",
     email: "idriss.badad@campus-la-chataigneraie.org",
-    phone: "07 68 06 11 76",
     // Laisse vide "" si tu n'as pas de lien, sinon mets l'URL complète
     linkedin: "https://www.linkedin.com/feed/",
     github: "https://github.com/idrissbadad-ai",
     // Chemin vers ta photo. Dépose le fichier dans le dossier assets/
     // puis remplace ce chemin, ex: "assets/photo.jpg"
     photo: "assets/Photo_CV.png",
-    aboutText: "En pleine formation BTS SIO, je combine rigueur académique et projets personnels en programmation. Je recherche un stage pour relever des défis concrets et apporter un regard neuf à votre stack technique. Motivé, autonome et prêt à coder !"
+    aboutText: "En formation BTS SIO option SLAM, je développe mes compétences en programmation à travers ma formation et différents projets personnels. Je recherche un stage pour mettre mes connaissances en pratique, découvrir le monde professionnel et participer à des projets concrets. Motivé, curieux et autonome, je suis prêt à relever de nouveaux défis !"
   },
     infosPersonnelles: [
     { label: "Date de naissance", value: "24 avril 2007" },
@@ -212,24 +211,10 @@ const CONTENT = {
   // ----------------------------------------------------------
   formations: [
     {
-      periode: "2026 – 2027",
+      periode: "2025 – 2027",
       etablissement: "Lycée la Chataigneraie",
       lieu: "76240 Le Mesnil-Esnard",
-      diplome: "2ème année BTS SIO (Services Informatiques aux Organisations)",
-      detail: "Spécialité SLAM (Solutions Logicielles et Applications Métiers)"
-    },
-    {
-      diplome: "Stage de 1ère année — Application de gestion de tablettes",
-      etablissement: "Hôtel du Département de la Seine-Maritime",
-      lieu: "Quai Jean Moulin, 76100 Rouen",
-      periode: "Mai 2026 - Juin 2026",
-      detail: "Réalisation d'une application de gestion de tablette."
-    },
-    {
-      periode: "2025 – 2026",
-      etablissement: "Lycée la Chataigneraie",
-      lieu: "76240 Le Mesnil-Esnard",
-      diplome: "1ère année BTS SIO (Services Informatiques aux Organisations)",
+      diplome: "BTS SIO (Services Informatiques aux Organisations)",
       detail: "Spécialité SLAM (Solutions Logicielles et Applications Métiers)"
     },
     {
@@ -247,7 +232,19 @@ const CONTENT = {
   experiences: [
     {
       poste: "Employé polyvalent",
-      entreprise: "Kebab Royal Kebab",
+      entreprise: "Intermarché",
+      periode: "Septembre 2026 - Aujourd'hui",
+      description: "Sens de l’organisation et du service client"
+    },
+    {
+      poste: "Stage de 1ère année - BTS SIO",
+      entreprise : "Hôtel du Département de la Seine-Maritime",
+      periode: "Mai 2026 - Juin 2026",
+      description: "Réalisation d'une application de gestion de tablette."
+    },
+    {
+      poste: "Employé polyvalent",
+      entreprise: "Kebab",
       periode: "Juillet 2024 – Août 2024",
       description: "Gestion du stress et du travail en équipe."
     },
@@ -312,7 +309,7 @@ skillCategories: [
     {
       title: "Développement de mon portfolio",
       categorie: "1ere-annee", // valeurs possibles : "1ere-annee", "2eme-annee", "stage-1ere-annee", "stage-2eme-annee"
-      context: "Projet Professionnelle",
+      context: "Projet Professionnel",
       competences: ["Développer la présence en ligne de l'organisation : Participer à l'évolution d'un site web exploitant les données de l'organisation.", "Travailler en mode projet : Evaluer les indicateurs de suivi d'un projet et analyser les écarts", "Mettre à disposiition des utilisateurs un système informatique : Déployer un service", "Organiser son développement professionnel : Mettre en oeuvre des outils et stratégies de veille informationnelle"],
       description: "J’ai conçu et développé un site web afin d’y présenter mon portfolio et mes différentes réalisations.",
       gallery: [
@@ -384,7 +381,7 @@ skillCategories: [
     {
       title: "Certifications RGPD",
       categorie: "1ere-annee",
-      context: "Projet Professionnelle",
+      context: "Projet Professionnel",
       competences: ["Gérer le patrimoine informatique : Vérifier le respect des règles d’utilisation des ressources numériques", "Organiser son développement professionnel : Mettre en place son environnement d’apprentissage personnel, Gérer son identité professionnelle"],
       description: "J'ai réalisé les activtés RGPD ce qui m'a permis d'obtenir les certifications agréé par le RGPD.",
       link: "",
@@ -401,7 +398,7 @@ skillCategories: [
     {
       title: "Certifications PIX",
       categorie: "1ere-annee",
-      context: "Projet Professionnelle",
+      context: "Projet Professionnel",
       competences: ["Gérer le patrimoine informatique : Vérifier le respect des règles d’utilisation des ressources numériques", "Organiser son développement professionnel : Mettre en place son environnement d’apprentissage personnel, Gérer son identité professionnelle"],
       description: "J'ai passé les epreuves PIX",
       link: "",
@@ -451,7 +448,7 @@ skillCategories: [
     {
       title: "Prise en main et montée en compétences sur le framework Svelte",
       categorie: "stage-1ere-annee",
-      context: "Projet Professionnelle",
+      context: "Projet Professionnel",
       competences: ["Répondre aux incidents et aux demandes d’assistance et d’évolution : Traiter des demandes concernant les applications", "Organiser son développement professionnel : Développer son projet professionnel"],
       description: "Décris en 2-3 phrases le besoin, ta solution, et ton rôle exact dans le projet.",
       link: "",
@@ -464,7 +461,7 @@ skillCategories: [
     {
       title: "Conception et réalisation de maquettes d’interface utilisateur",
       categorie: "stage-1ere-annee",
-      context: "Projet Professionnelle",
+      context: "Projet Professionnel",
       competences: ["Répondre aux incidents et aux demandes d’assistance et d’évolution : Traiter des demandes concernant les applications", "Travailler en mode projet : Évaluer les indicateurs de suivi d’un projet et analyser les écarts"],
       description: "Décris en 2-3 phrases le besoin, ta solution, et ton rôle exact dans le projet.",
       link: "",
@@ -477,7 +474,7 @@ skillCategories: [
     {
       title: "Réalisation d’un modèle conceptuel de données (CDM)",
       categorie: "stage-1ere-annee",
-      context: "Projet Professionnelle",
+      context: "Projet Professionnel",
       competences: ["Répondre aux incidents et aux demandes d’assistance et d’évolution : Traiter des demandes concernant les applications","Gérer le patrimoine informatique : Exploiter des référentiels, normes et standards adoptés par le prestataire informatique", "Collecter, suivre et orienter des demandes : Répondre aux incidents et aux demandes d’assistance et d’évolution"],
       description: "Décris en 2-3 phrases le besoin, ta solution, et ton rôle exact dans le projet.",
       link: "",
@@ -490,7 +487,7 @@ skillCategories: [
     {
       title: "Conception et mise en place d’une base de données NoSQL ",
       categorie: "stage-1ere-annee",
-      context: "Projet Professionnelle",
+      context: "Projet Professionnel",
       competences: ["Répondre aux incidents et aux demandes d’assistance et d’évolution : Traiter des demandes concernant les applications","Mettre à disposition des utilisateurs un service informatique : Réaliser les tests d’intégration et d’acceptation d’un service","Organiser son développement professionnel : Développer son projet professionnel"],
       description: "Décris en 2-3 phrases le besoin, ta solution, et ton rôle exact dans le projet.",
       link: "",
@@ -503,7 +500,7 @@ skillCategories: [
     {
       title: "Développement d’une application de gestion de tablette web avec le framework Svelte",
       categorie: "stage-1ere-annee",
-      context: "Projet Professionnelle",
+      context: "Projet Professionnel",
       competences: ["Répondre aux incidents et aux demandes d’assistance et d’évolution : Traiter des demandes concernant les applications, Suivre et orienter des demandes ","Travailler en mode projet : Planifier les activités, Évaluer les indicateurs de suivi d’un projet et analyser les écarts","Organiser son développement professionnel : Développer son projet professionnel"],
       description: "Décris en 2-3 phrases le besoin, ta solution, et ton rôle exact dans le projet.",
       link: "",
@@ -516,7 +513,7 @@ skillCategories: [
     {
       title: "Mise en ligne et gestion du projet via GitHub ",
       categorie: "stage-1ere-annee",
-      context: "Projet Professionnelle",
+      context: "Projet Professionnel",
       competences: ["Répondre aux incidents et aux demandes d’assistance et d’évolution : Collecter, suivre et orienter des demandes ","Mettre à disposition des utilisateurs un service informatique : Déployer un service"],
       description: "Décris en 2-3 phrases le besoin, ta solution, et ton rôle exact dans le projet.",
       link: "",
